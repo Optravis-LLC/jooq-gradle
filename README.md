@@ -13,7 +13,14 @@ plugins {
 }
 ```
 
-The plugin will add a `generateJooq` task, and make sure it always runs before `compileKotlin`.
+## What does the plugin do?
+
+* Add `generateJooq` task:
+  * start a PostgreSQL docker container
+  * apply flyway migrations from `src/main/resources/db/migration`
+  * run jOOQ code generator with a configuration tailored for Kotlin Projects
+* Make the `compileKotlin` task depend on `generateJooq`
+* Add the generated jooq code to the main source set
 
 > [!NOTE]
 >
