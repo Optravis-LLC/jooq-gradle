@@ -7,11 +7,13 @@ jooq = "3.19.10"
 testcontainers = "1.19.8"
 postgres = "42.7.3"
 hikari = "5.1.0"
+gradle-plugin-publish = "1.2.1"
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 jooq = { id = "org.jooq.jooq-codegen-gradle", version.ref = "jooq" }
+gradle-plugin-publish = { id = "com.gradle.plugin-publish", version.ref = "gradle-plugin-publish" }
 
 [libraries]
 # jOOQ

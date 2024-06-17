@@ -1,10 +1,10 @@
-# Jooq generator plugin
+# jOOQ Generator Plugin for Kotlin
 
-An opinionated gradle plugin to generate jOOQ classes from Flyway migrations.
+An opinionated gradle plugin to generate jOOQ Kotlin code from Flyway migrations.
 
-The goal is to be as easy as possible to set up jOOQ generation for projects using Kotlin, Flyway and Postgres.
+The goal is to be as easy as possible to set up jOOQ generation for projects that are using Kotlin, Flyway, and Postgres.
 
-The minimal setup for projects using Postgres (and the default flyway migration directory) is:
+The minimal setup for those project is:
 
 ```kotlin
 plugins {
@@ -12,6 +12,15 @@ plugins {
     id("com.optravis.platform.jooq") version "<version>" // Install jOOQ generation plugin
 }
 ```
+
+## What does the plugin do?
+
+* Add `generateJooq` task:
+  * start a PostgreSQL docker container
+  * apply flyway migrations from `src/main/resources/db/migration`
+  * run jOOQ code generator with a configuration tailored for Kotlin Projects
+* Make the `compileKotlin` task depend on `generateJooq`
+* Add the generated jooq code to the main source set
 
 > [!NOTE]
 >
