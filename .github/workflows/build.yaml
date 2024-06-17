@@ -63,5 +63,5 @@ jobs:
       - name: Setup publication key
         run: echo "${{ secrets.GRADLE_PUBLISH_CONFIG }}" > ~/.gradle/gradle.properties
       - run: just publish
-      - run: rm -rf ~/.gradle/gradle.properties
+      - run: rm -f ~/.gradle/gradle.properties
         if: ${{ always() }}
