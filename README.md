@@ -15,7 +15,7 @@ plugins {
 
 ## What does the plugin do?
 
-* Add `generateJooq` task:
+* `generateJooq` task:
   * starts a PostgreSQL docker container
   * applies flyway migrations from `src/main/resources/db/migration`
   * run jOOQ code generator with a configuration tailored for Kotlin Projects
