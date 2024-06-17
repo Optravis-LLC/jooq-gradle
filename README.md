@@ -9,7 +9,7 @@ The minimal setup for those project is:
 ```kotlin
 plugins {
     kotlin("jvm") version "<kotlin version>" // The Kotlin plugin is required
-    id("com.optravis.platform.jooq") version "<version>" // Install jOOQ generation plugin
+    id("com.optravis.jooq") version "<version>" // Install jOOQ generation plugin
 }
 ```
 
