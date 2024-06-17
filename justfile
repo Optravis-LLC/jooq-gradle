@@ -12,4 +12,4 @@ action-lint:
     actionlint -verbose
 
 publish:
-    ./gradlew publish -Pversion=$(cat version.txt | xargs)
+    ./gradlew publishPlugins -Pversion=$(cat version.txt | xargs)

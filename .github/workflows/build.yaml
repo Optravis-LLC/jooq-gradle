@@ -60,7 +60,6 @@ jobs:
       - uses: taiki-e/install-action@v2
         with:
           tool: just@1
+      - name: Setup publication key
+        run: echo "${{ secrets.GRADLE_PUBLISH_CONFIG }}" > ~/.gradle/gradle.properties
       - run: just publish
-        env:
-          GITHUB_USERNAME: ${{ github.actor }}
-          GITHUB_TOKEN: ${{ github.token }}
