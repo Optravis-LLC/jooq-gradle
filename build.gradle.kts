@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.detekt)
+    alias(libs.plugins.gradle.plugin.publish)
     `java-gradle-plugin`
 }
 
@@ -29,10 +30,15 @@ dependencies {
 }
 
 gradlePlugin {
+    website.set("https://github.com/Optravis-LLC/jooq-gradle")
+    vcsUrl.set("https://github.com/Optravis-LLC/jooq-gradle")
     plugins {
         create("jooqGenerator") {
             id = "com.optravis.jooq"
             implementationClass = "com.optravis.jooq.gradle.JooqGeneratorPlugin"
+            displayName = "jOOQ Generator Plugin for Kotlin"
+            description = "An opinionated gradle plugin to generate jOOQ Kotlin code from Flyway migrations"
+            tags.set(listOf("kotlin", "jooq", "flyway", "postgres"))
         }
     }
 }
