@@ -28,7 +28,7 @@ jobs:
 
   # Prepare a release PR or release
   release:
-    if: github.ref == 'refs/heads/main'
+    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -44,7 +44,7 @@ jobs:
   # Publish the artifacts (only if `verify` passed, and `release` created release)
   publish:
     needs: [ verify, release ]
-    if: needs.verify.result == 'success' && needs.release.outputs.released
+    if: ${{ needs.verify.result == 'success' && needs.release.outputs.released }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
@@ -63,3 +63,5 @@ jobs:
       - name: Setup publication key
         run: echo "${{ secrets.GRADLE_PUBLISH_CONFIG }}" > ~/.gradle/gradle.properties
       - run: just publish
+      - run: rm -rf ~/.gradle/gradle.properties
+        if: ${{ always() }}
