@@ -9,6 +9,6 @@ The minimal setup for projects using Postgres (and the default flyway migration 
 ```kotlin
 plugins {
     kotlin("jvm") version "<kotlin version>" // The Kotlin plugin is required
-    id("com.optravis.platform.jooq") version "<platformlib version>" // Install jOOQ generation plugin
+    id("com.optravis.platform.jooq") version "<version>" // Install jOOQ generation plugin
 }
 ```
