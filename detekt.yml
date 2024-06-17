@@ -1,0 +1,15 @@
+config:
+  validation: true
+  warningsAsErrors: true
+
+style:
+  ReturnCount:
+    active: false
+  ThrowsCount:
+    active: false
+  MaxLineLength:
+    excludeCommentStatements: true
+
+exceptions:
+  TooGenericExceptionCaught:
+    active: false

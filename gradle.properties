@@ -1,0 +1,4 @@
+org.gradle.parallel=true
+org.gradle.daemon=true
+org.gradle.configuration-cache=true
+org.gradle.caching=true

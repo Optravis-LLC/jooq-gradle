@@ -1,0 +1,40 @@
+[versions]
+kotlin = "2.0.0"
+detekt = "1.23.6"
+kotest = "5.9.1"
+flyway = "10.15.0"
+jooq = "3.19.10"
+testcontainers = "1.19.8"
+postgres = "42.7.3"
+hikari = "5.1.0"
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+jooq = { id = "org.jooq.jooq-codegen-gradle", version.ref = "jooq" }
+
+[libraries]
+# jOOQ
+jooq-core = { module = "org.jooq:jooq", version.ref = "jooq" }
+jooq-kotlin = { module = "org.jooq:jooq-kotlin", version.ref = "jooq" }
+jooq-coroutines = { module = "org.jooq:jooq-kotlin-coroutines", version.ref = "jooq" }
+jooq-meta-core = { module = "org.jooq:jooq-meta", version.ref = "jooq" }
+jooq-meta-kotlin = { module = "org.jooq:jooq-meta-kotlin", version.ref = "jooq" }
+jooq-codegen = { module = "org.jooq:jooq-codegen", version.ref = "jooq" }
+
+# Flyway
+flyway-core = { module = "org.flywaydb:flyway-core", version.ref = "flyway" }
+flyway-postgres = { module = "org.flywaydb:flyway-database-postgresql", version.ref = "flyway" }
+
+# Test Containers
+testcontainers-core = { module = "org.testcontainers:testcontainers", version.ref = "testcontainers" }
+testcontainers-postgresql = { module = "org.testcontainers:postgresql", version.ref = "testcontainers" }
+
+# DB access
+postgresql = { module = "org.postgresql:postgresql", version.ref = "postgres" }
+hikari = { module = "com.zaxxer:HikariCP", version.ref = "hikari" }
+
+# Test
+kotest-assertions = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
+kotest-datatest = { module = "io.kotest:kotest-framework-datatest", version.ref = "kotest" }
+kotest-runner = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
