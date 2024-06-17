@@ -2,9 +2,11 @@ set dotenv-load
 
 verify:
     ./gradlew check
+    ./gradlew -p example check
 
 test:
-    ./gradlew check
+    ./gradlew test
+    ./gradlew -p example test
 
 action-lint:
     actionlint -verbose

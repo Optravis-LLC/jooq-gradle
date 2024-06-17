@@ -31,7 +31,7 @@ dependencies {
 gradlePlugin {
     plugins {
         create("jooqGenerator") {
-            id = "com.optravis.jooq.gradle"
+            id = "com.optravis.jooq"
             implementationClass = "com.optravis.jooq.gradle.JooqGeneratorPlugin"
         }
     }
