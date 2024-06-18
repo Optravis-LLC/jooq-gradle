@@ -58,6 +58,7 @@ private fun JooqGeneratorConfig.toConfiguration(jdbcUrl: String) =
                     Database()
                         .withName(database.name)
                         .withInputSchema(database.inputSchema)
+                        .withRecordVersionFields(database.recordVersionFields)
                         .withExcludes("flyway_schema_history")
                 )
                 .withGenerate(
