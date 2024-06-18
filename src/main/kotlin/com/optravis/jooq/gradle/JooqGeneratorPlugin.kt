@@ -25,6 +25,7 @@ public interface JooqGeneratorExtension {
     public val packageName: Property<String>
     public val deprecateUnknownTypes: Property<Boolean>
     public val javaTimeTypes: Property<Boolean>
+    public val kotlinPojos: Property<Boolean>
 }
 
 private object Default {
@@ -54,6 +55,7 @@ public class JooqGeneratorPlugin : Plugin<Project> {
             migrationDirectory.convention(ext.migrationDirectory)
             deprecateUnknownTypes.convention(ext.deprecateUnknownTypes)
             javaTimeTypes.convention(ext.javaTimeTypes)
+            kotlinPojos.convention(ext.kotlinPojos)
             packageName.convention(ext.packageName.orElse("${project.group}.jooq"))
         }
         "compileJava" { dependsOn(generateTask) }
@@ -73,6 +75,7 @@ public class JooqGeneratorPlugin : Plugin<Project> {
             migrationDirectory.convention(File("${project.layout.projectDirectory}/src/main/resources/db/migration"))
             deprecateUnknownTypes.convention(true)
             javaTimeTypes.convention(true)
+            kotlinPojos.convention(true)
         }
 }
 
@@ -97,6 +100,9 @@ private abstract class JooqGenerateTask : DefaultTask() {
     @get:Input
     abstract val javaTimeTypes: Property<Boolean>
 
+    @get:Input
+    abstract val kotlinPojos: Property<Boolean>
+
     @get:InputDirectory
     abstract val migrationDirectory: Property<File>
 
@@ -117,6 +123,7 @@ private abstract class JooqGenerateTask : DefaultTask() {
         migrationDirectory = migrationDirectory.get(),
         deprecateUnknownTypes = deprecateUnknownTypes.get(),
         javaTimeTypes = javaTimeTypes.get(),
+        kotlinPojos = kotlinPojos.get(),
         target = JooqTargetConfig(
             packageName = packageName.get(),
             directory = outputDirectory,

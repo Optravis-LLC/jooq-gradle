@@ -19,6 +19,7 @@ internal data class JooqGeneratorConfig(
     val target: JooqTargetConfig,
     val deprecateUnknownTypes: Boolean,
     val javaTimeTypes: Boolean,
+    val kotlinPojos: Boolean,
 )
 
 @ExperimentalJooqGeneratorConfig
