@@ -26,6 +26,7 @@ public interface JooqGeneratorExtension {
     public val migrationDirectory: Property<File>
     public val packageName: Property<String>
     public val deprecateUnknownTypes: Property<Boolean>
+    public val javaTimeTypes: Property<Boolean>
 }
 
 private object Default {
@@ -53,6 +54,7 @@ public class JooqGeneratorPlugin : Plugin<Project> {
             jooqDbConfig.convention(ext.jooqDbConfig)
             migrationDirectory.convention(ext.migrationDirectory)
             deprecateUnknownTypes.convention(ext.deprecateUnknownTypes)
+            javaTimeTypes.convention(ext.javaTimeTypes)
             packageName.convention(ext.packageName.orElse("${project.group}.jooq"))
         }
         "compileJava" { dependsOn(generateTask) }
@@ -71,6 +73,7 @@ public class JooqGeneratorPlugin : Plugin<Project> {
             jooqDbConfig.convention(JooqDatabaseConfig.postgres)
             migrationDirectory.convention(File("${project.layout.projectDirectory}/src/main/resources/db/migration"))
             deprecateUnknownTypes.convention(true)
+            javaTimeTypes.convention(true)
         }
 }
 
@@ -91,6 +94,9 @@ private abstract class JooqGenerateTask : DefaultTask() {
     @get:Input
     abstract val deprecateUnknownTypes: Property<Boolean>
 
+    @get:Input
+    abstract val javaTimeTypes: Property<Boolean>
+
     @get:InputDirectory
     abstract val migrationDirectory: Property<File>
 
@@ -110,6 +116,7 @@ private abstract class JooqGenerateTask : DefaultTask() {
         database = jooqDbConfig.get(),
         migrationDirectory = migrationDirectory.get(),
         deprecateUnknownTypes = deprecateUnknownTypes.get(),
+        javaTimeTypes = javaTimeTypes.get(),
         target = JooqTargetConfig(
             packageName = packageName.get(),
             directory = outputDirectory,

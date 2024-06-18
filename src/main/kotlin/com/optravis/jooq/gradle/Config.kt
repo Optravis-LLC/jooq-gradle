@@ -18,6 +18,7 @@ internal data class JooqGeneratorConfig(
     val migrationDirectory: File,
     val target: JooqTargetConfig,
     val deprecateUnknownTypes: Boolean,
+    val javaTimeTypes: Boolean,
 )
 
 @ExperimentalJooqGeneratorConfig
