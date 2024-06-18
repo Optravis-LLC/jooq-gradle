@@ -60,8 +60,7 @@ jobs:
       - uses: taiki-e/install-action@v2
         with:
           tool: just@1
-      - name: Setup publication key
-        run: echo "${{ secrets.GRADLE_PUBLISH_CONFIG }}" > ~/.gradle/gradle.properties
       - run: just publish
-      - run: rm -f ~/.gradle/gradle.properties
-        if: ${{ always() }}
+        env:
+          GRADLE_PUBLISH_KEY: ${{ secrets.GRADLE_PUBLISH_KEY }}
+          GRADLE_PUBLISH_SECRET: ${{ secrets.GRADLE_PUBLISH_SECRET }}
