@@ -2,7 +2,8 @@
 
 An opinionated gradle plugin to generate jOOQ Kotlin code from Flyway migrations.
 
-The goal is to be as easy as possible to set up jOOQ generation for projects that are using Kotlin, Flyway, and Postgres.
+The goal is to be as easy as possible to set up jOOQ generation for projects that are using Kotlin, Flyway, and
+Postgres.
 
 The minimal setup for those project is:
 
@@ -16,9 +17,9 @@ plugins {
 ## What does the plugin do?
 
 * Add `generateJooq` task:
-  * start a PostgreSQL docker container
-  * apply flyway migrations from `src/main/resources/db/migration`
-  * run jOOQ code generator with a configuration tailored for Kotlin Projects
+    * start a PostgreSQL docker container
+    * apply flyway migrations from `src/main/resources/db/migration`
+    * run jOOQ code generator with a configuration tailored for Kotlin Projects
 * Make the `compileKotlin` task depend on `generateJooq`
 * Add the generated jooq code to the main source set
 
@@ -26,6 +27,37 @@ plugins {
 >
 > This plugin requires a `docker` installation
 
+## Configuration
+
+In general this gradle plugins aims for requiring as little configuration as possible.
+
+However, one may configure the jooq generation as follows:
+
+*build.gradle.kts*
+
+```kotlin
+import com.optravis.jooq.gradle.ContainerConfig
+import com.optravis.jooq.gradle.ExperimentalJooqGeneratorConfig
+import com.optravis.jooq.gradle.JooqGeneratorConfig
+
+@OptIn(ExperimentalJooqGeneratorConfig::class)
+jooqGenerator {
+  containerConfig.set(ContainerConfig.postgres(version = "16"))
+  generatorConfig.set(
+    JooqGeneratorConfig(
+      deprecateUnknownTypes = true,
+      kotlinPojos = true,
+      javaTimeTypes = true,
+    )
+  )
+}
+```
+
+> [!WARING]
+>
+> The configuration API is experimental (hence the requirement to `@OptIn`)
+>
+> Breaking changes to that API maybe introduced in minor releases of the plugin!
 
 ## MIT License
 
