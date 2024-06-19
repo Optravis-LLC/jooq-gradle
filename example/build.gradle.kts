@@ -1,3 +1,7 @@
+import com.optravis.jooq.gradle.ContainerConfig
+import com.optravis.jooq.gradle.ExperimentalJooqGeneratorConfig
+import com.optravis.jooq.gradle.JooqGeneratorConfig
+
 plugins {
     alias(libs.plugins.kotlin.jvm)
     id("com.optravis.jooq")
@@ -8,6 +12,19 @@ group = "com.optravis.jooq.gradle.example"
 
 repositories {
     mavenCentral()
+}
+
+// ATTENTION: If you change the config bellow, please update the README.md!
+@OptIn(ExperimentalJooqGeneratorConfig::class)
+jooqGenerator {
+    containerConfig.set(ContainerConfig.postgres(version = "16"))
+    generatorConfig.set(
+        JooqGeneratorConfig(
+            deprecateUnknownTypes = true,
+            kotlinPojos = true,
+            javaTimeTypes = true,
+        )
+    )
 }
 
 dependencies {
