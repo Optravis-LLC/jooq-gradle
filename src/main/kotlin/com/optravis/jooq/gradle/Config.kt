@@ -11,16 +11,21 @@ import java.io.Serializable
 public annotation class ExperimentalJooqGeneratorConfig
 
 @OptIn(ExperimentalJooqGeneratorConfig::class)
-internal data class JooqGeneratorConfig(
+internal data class JooqRootConfig(
     val container: ContainerConfig,
     val connection: DbConnectionConfig,
     val database: JooqDatabaseConfig,
+    val generator: JooqGeneratorConfig,
     val migrationDirectory: File,
     val target: JooqTargetConfig,
-    val deprecateUnknownTypes: Boolean,
-    val javaTimeTypes: Boolean,
-    val kotlinPojos: Boolean,
 )
+
+@ExperimentalJooqGeneratorConfig
+public data class JooqGeneratorConfig(
+    internal val deprecateUnknownTypes: Boolean = true,
+    internal val javaTimeTypes: Boolean = true,
+    internal val kotlinPojos: Boolean = true,
+) : Serializable
 
 @ExperimentalJooqGeneratorConfig
 public data class ContainerConfig(
