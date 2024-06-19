@@ -2,7 +2,7 @@ name: build
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
   workflow_dispatch:
 
@@ -32,6 +32,7 @@ jobs:
 
   # Prepare a release PR or release
   release:
+    needs: verify
     if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     permissions:
@@ -47,7 +48,7 @@ jobs:
 
   # Publish the artifacts (only if `verify` passed, and `release` created release)
   publish:
-    needs: [ verify, release ]
+    needs: [verify, release]
     if: ${{ needs.verify.result == 'success' && needs.release.outputs.released }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
