@@ -89,12 +89,12 @@ public data class DbConnectionConfig(
     /** JDBC url template. `{{port}}` will be substituted with the container port */
     internal val urlTemplate: String,
 ) : Serializable {
-    internal companion object {
-        fun postgres(
+    public companion object {
+        public fun postgres(
             db: String = Default.DB,
             user: String = Default.USER,
             password: String = Default.PASSWORD
-        ) = DbConnectionConfig(
+        ): DbConnectionConfig = DbConnectionConfig(
             user = user,
             password = password,
             urlTemplate = "jdbc:postgresql://localhost:{{port}}/$db"
