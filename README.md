@@ -29,9 +29,9 @@ plugins {
 
 ## Configuration
 
-In general this gradle plugins aims for requiring as little configuration as possible.
+In general, this gradle plugin aims to require as little configuration as possible.
 
-However, one may configure the jooq generation as follows:
+However, one may configure the jOOQ generation as follows:
 
 *build.gradle.kts*
 
@@ -53,11 +53,11 @@ jooqGenerator {
 }
 ```
 
-> [!WARING]
+> [!WARNING]
 >
 > The configuration API is experimental (hence the requirement to `@OptIn`)
 >
-> Breaking changes to that API maybe introduced in minor releases of the plugin!
+> Breaking changes to that API may be introduced in minor releases of the plugin!
 
 ## MIT License
 
