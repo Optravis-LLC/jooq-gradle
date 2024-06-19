@@ -23,8 +23,7 @@ public interface JooqGeneratorExtension {
     public val jooqDbConfig: Property<JooqDatabaseConfig>
     public val migrationDirectory: Property<File>
     public val packageName: Property<String>
-    public val deprecateUnknownTypes: Property<Boolean>
-    public val javaTimeTypes: Property<Boolean>
+    public val generatorConfig: Property<JooqGeneratorConfig>
 }
 
 private object Default {
@@ -52,8 +51,7 @@ public class JooqGeneratorPlugin : Plugin<Project> {
             connectionConfig.convention(ext.connectionConfig)
             jooqDbConfig.convention(ext.jooqDbConfig)
             migrationDirectory.convention(ext.migrationDirectory)
-            deprecateUnknownTypes.convention(ext.deprecateUnknownTypes)
-            javaTimeTypes.convention(ext.javaTimeTypes)
+            generatorConfig.convention(ext.generatorConfig)
             packageName.convention(ext.packageName.orElse("${project.group}.jooq"))
         }
         "compileJava" { dependsOn(generateTask) }
@@ -71,8 +69,7 @@ public class JooqGeneratorPlugin : Plugin<Project> {
             connectionConfig.convention(DbConnectionConfig.postgres(Default.DB, Default.USER, Default.PASSWORD))
             jooqDbConfig.convention(JooqDatabaseConfig.postgres())
             migrationDirectory.convention(File("${project.layout.projectDirectory}/src/main/resources/db/migration"))
-            deprecateUnknownTypes.convention(true)
-            javaTimeTypes.convention(true)
+            generatorConfig.convention(JooqGeneratorConfig())
         }
 }
 
@@ -92,10 +89,7 @@ private abstract class JooqGenerateTask : DefaultTask() {
     abstract val packageName: Property<String>
 
     @get:Input
-    abstract val deprecateUnknownTypes: Property<Boolean>
-
-    @get:Input
-    abstract val javaTimeTypes: Property<Boolean>
+    abstract val generatorConfig: Property<JooqGeneratorConfig>
 
     @get:InputDirectory
     abstract val migrationDirectory: Property<File>
@@ -110,13 +104,12 @@ private abstract class JooqGenerateTask : DefaultTask() {
             .generate()
     }
 
-    private fun config(): JooqGeneratorConfig = JooqGeneratorConfig(
+    private fun config(): JooqRootConfig = JooqRootConfig(
         container = containerConfig.get(),
         connection = connectionConfig.get(),
         database = jooqDbConfig.get(),
         migrationDirectory = migrationDirectory.get(),
-        deprecateUnknownTypes = deprecateUnknownTypes.get(),
-        javaTimeTypes = javaTimeTypes.get(),
+        generator = generatorConfig.get(),
         target = JooqTargetConfig(
             packageName = packageName.get(),
             directory = outputDirectory,

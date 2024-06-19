@@ -17,7 +17,7 @@ import org.testcontainers.containers.wait.strategy.Wait
 import org.testcontainers.utility.DockerImageName
 
 
-internal fun JooqGeneratorConfig.generate() {
+internal fun JooqRootConfig.generate() {
     container.run { port ->
         val jdbcUrl = connection.makeUrl(port)
         var attempts = 0
@@ -43,7 +43,7 @@ private fun DbConnectionConfig.isReady(jdbcUrl: String): Boolean {
     return runCatching { HikariDataSource(config).connection.close() }.isSuccess
 }
 
-private fun JooqGeneratorConfig.toConfiguration(jdbcUrl: String) =
+private fun JooqRootConfig.toConfiguration(jdbcUrl: String) =
     Configuration()
         .withJdbc(
             Jdbc()
@@ -64,14 +64,15 @@ private fun JooqGeneratorConfig.toConfiguration(jdbcUrl: String) =
                 .withGenerate(
                     Generate()
                         .withDaos(true)
-                        .withDeprecationOnUnknownTypes(deprecateUnknownTypes)
-                        .withPojosAsKotlinDataClasses(true)
-                        .withKotlinDefaultedNullablePojoAttributes(true)
-                        .withKotlinDefaultedNullableRecordAttributes(true)
-                        .withKotlinNotNullPojoAttributes(true)
-                        .withKotlinNotNullInterfaceAttributes(true)
-                        .withKotlinNotNullRecordAttributes(true)
-                        .withJavaTimeTypes(javaTimeTypes)
+                        .withDeprecationOnUnknownTypes(generator.deprecateUnknownTypes)
+                        .withPojos(!generator.kotlinPojos)
+                        .withPojosAsKotlinDataClasses(generator.kotlinPojos)
+                        .withKotlinDefaultedNullablePojoAttributes(generator.kotlinPojos)
+                        .withKotlinDefaultedNullableRecordAttributes(generator.kotlinPojos)
+                        .withKotlinNotNullPojoAttributes(generator.kotlinPojos)
+                        .withKotlinNotNullInterfaceAttributes(generator.kotlinPojos)
+                        .withKotlinNotNullRecordAttributes(generator.kotlinPojos)
+                        .withJavaTimeTypes(generator.javaTimeTypes)
                 )
                 .withTarget(
                     Target()
