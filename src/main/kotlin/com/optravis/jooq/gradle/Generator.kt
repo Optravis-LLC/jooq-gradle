@@ -70,6 +70,7 @@ private fun JooqGeneratorConfig.toConfiguration(jdbcUrl: String) =
                         .withKotlinNotNullPojoAttributes(true)
                         .withKotlinNotNullInterfaceAttributes(true)
                         .withKotlinNotNullRecordAttributes(true)
+                        .withJavaTimeTypes(javaTimeTypes)
                 )
                 .withTarget(
                     Target()
