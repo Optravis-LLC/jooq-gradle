@@ -64,7 +64,7 @@ public class JooqGeneratorPlugin : Plugin<Project> {
     }
 
     private fun Project.createExtension() =
-        extensions.create<JooqGeneratorExtension>("jooqGeneratorExtension").apply {
+        extensions.create<JooqGeneratorExtension>("jooqGenerator").apply {
             containerConfig.convention(ContainerConfig.postgres(Default.DB, Default.USER, Default.PASSWORD))
             connectionConfig.convention(DbConnectionConfig.postgres(Default.DB, Default.USER, Default.PASSWORD))
             jooqDbConfig.convention(JooqDatabaseConfig.postgres())
