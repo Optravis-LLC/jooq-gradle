@@ -45,11 +45,16 @@ public data class JooqDatabaseConfig(
     /** Name of the jOOQ database connector (e.g. 'org.jooq.meta.postgres.PostgresDatabase') */
     internal val name: String,
     internal val inputSchema: String,
+    internal val recordVersionFields: List<String> = emptyList(),
 ) : Serializable {
-    internal companion object {
-        val postgres: JooqDatabaseConfig = JooqDatabaseConfig(
+    public companion object {
+        public fun postgres(
+            schema: String = "public",
+            recordVersionFields: List<String> = emptyList(),
+        ): JooqDatabaseConfig = JooqDatabaseConfig(
             name = "org.jooq.meta.postgres.PostgresDatabase",
-            inputSchema = "public",
+            inputSchema = schema,
+            recordVersionFields = recordVersionFields,
         )
     }
 }

@@ -1,5 +1,3 @@
-@file:OptIn(ExperimentalJooqGeneratorConfig::class)
-
 package com.optravis.jooq.gradle
 
 import org.gradle.api.DefaultTask
@@ -35,6 +33,7 @@ private object Default {
     const val PASSWORD = "jooq"
 }
 
+@OptIn(ExperimentalJooqGeneratorConfig::class)
 public class JooqGeneratorPlugin : Plugin<Project> {
     override fun apply(project: Project): Unit = with(project) {
         val extension = createExtension()
@@ -70,13 +69,14 @@ public class JooqGeneratorPlugin : Plugin<Project> {
         extensions.create<JooqGeneratorExtension>("jooqGeneratorExtension").apply {
             containerConfig.convention(ContainerConfig.postgres(Default.DB, Default.USER, Default.PASSWORD))
             connectionConfig.convention(DbConnectionConfig.postgres(Default.DB, Default.USER, Default.PASSWORD))
-            jooqDbConfig.convention(JooqDatabaseConfig.postgres)
+            jooqDbConfig.convention(JooqDatabaseConfig.postgres())
             migrationDirectory.convention(File("${project.layout.projectDirectory}/src/main/resources/db/migration"))
             deprecateUnknownTypes.convention(true)
             javaTimeTypes.convention(true)
         }
 }
 
+@OptIn(ExperimentalJooqGeneratorConfig::class)
 private abstract class JooqGenerateTask : DefaultTask() {
 
     @get:Input
