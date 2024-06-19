@@ -26,12 +26,6 @@ public interface JooqGeneratorExtension {
     public val generatorConfig: Property<JooqGeneratorConfig>
 }
 
-private object Default {
-    const val DB = "jooq"
-    const val USER = "jooq"
-    const val PASSWORD = "jooq"
-}
-
 @OptIn(ExperimentalJooqGeneratorConfig::class)
 public class JooqGeneratorPlugin : Plugin<Project> {
     override fun apply(project: Project): Unit = with(project) {
@@ -65,8 +59,8 @@ public class JooqGeneratorPlugin : Plugin<Project> {
 
     private fun Project.createExtension() =
         extensions.create<JooqGeneratorExtension>("jooqGenerator").apply {
-            containerConfig.convention(ContainerConfig.postgres(Default.DB, Default.USER, Default.PASSWORD))
-            connectionConfig.convention(DbConnectionConfig.postgres(Default.DB, Default.USER, Default.PASSWORD))
+            containerConfig.convention(ContainerConfig.postgres())
+            connectionConfig.convention(DbConnectionConfig.postgres())
             jooqDbConfig.convention(JooqDatabaseConfig.postgres())
             migrationDirectory.convention(File("${project.layout.projectDirectory}/src/main/resources/db/migration"))
             generatorConfig.convention(JooqGeneratorConfig())

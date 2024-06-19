@@ -10,6 +10,12 @@ import java.io.Serializable
 )
 public annotation class ExperimentalJooqGeneratorConfig
 
+private object Default {
+    const val DB = "jooq"
+    const val USER = "jooq"
+    const val PASSWORD = "jooq"
+}
+
 @OptIn(ExperimentalJooqGeneratorConfig::class)
 internal data class JooqRootConfig(
     val container: ContainerConfig,
@@ -33,10 +39,16 @@ public data class ContainerConfig(
     internal val port: Int,
     internal val environment: Map<String, String>
 ) : Serializable {
-    internal companion object {
-        fun postgres(db: String, user: String, password: String, version: Int = 16) = ContainerConfig(
+    public companion object {
+        public fun postgres(
+            db: String = Default.DB,
+            user: String = Default.USER,
+            password: String = Default.PASSWORD,
+            version: String = "16",
+            port: Int = 5432,
+        ): ContainerConfig = ContainerConfig(
             image = "postgres:$version",
-            port = 5432,
+            port = port,
             environment = mapOf(
                 "POSTGRES_DB" to db,
                 "POSTGRES_USER" to user,
@@ -78,7 +90,11 @@ public data class DbConnectionConfig(
     internal val urlTemplate: String,
 ) : Serializable {
     internal companion object {
-        fun postgres(db: String, user: String, password: String) = DbConnectionConfig(
+        fun postgres(
+            db: String = Default.DB,
+            user: String = Default.USER,
+            password: String = Default.PASSWORD
+        ) = DbConnectionConfig(
             user = user,
             password = password,
             urlTemplate = "jdbc:postgresql://localhost:{{port}}/$db"
