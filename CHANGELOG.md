@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.0](https://github.com/Optravis-LLC/jooq-gradle/compare/v1.2.0...v1.2.0) (2024-06-20)
+
+
+### Features
+
+* Extend Generator Configuration to capture Type ([#16](https://github.com/Optravis-LLC/jooq-gradle/issues/16)) ([5df24a0](https://github.com/Optravis-LLC/jooq-gradle/commit/5df24a0cc4b5f1a258d2395dd2a7e4b5cd47cb01))
+
+
 
 ## [1.1.0](https://github.com/Optravis-LLC/jooq-gradle/compare/v1.0.0...v1.1.0) (2024-06-19)
 
