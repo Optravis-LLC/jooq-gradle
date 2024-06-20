@@ -2,7 +2,8 @@ set dotenv-load
 
 verify:
     ./gradlew check
-    ./gradlew -p example check
+    ./gradlew -p examples/with_config check
+    ./gradlew -p examples/default_config check
 
 test:
     ./gradlew test
