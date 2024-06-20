@@ -71,7 +71,7 @@ private fun JooqRootConfig.toConfiguration(jdbcUrl: String) =
 
 private fun JooqRootConfig.generateSpecifically(): Generate {
     val common = Generate()
-        .withDaos(true)
+        .withDaos(generator.daos)
         .withPojos(generator.pojos)
         .withJavaTimeTypes(generator.javaTimeTypes)
         .withDeprecationOnUnknownTypes(generator.deprecateUnknownTypes)
