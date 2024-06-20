@@ -21,7 +21,8 @@ jooqGenerator {
     generatorConfig.set(
         JooqGeneratorConfig(
             deprecateUnknownTypes = true,
-            kotlinPojos = true,
+            daos = true,
+            pojos = true,
             javaTimeTypes = true,
         )
     )
