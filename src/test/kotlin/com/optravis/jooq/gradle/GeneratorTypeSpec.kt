@@ -8,13 +8,14 @@ import io.kotest.matchers.equals.shouldNotBeEqual
 
 @OptIn(ExperimentalJooqGeneratorConfig::class)
 class GeneratorTypeSpec : FunSpec({
+    val types = listOf(GeneratorType.Java, GeneratorType.Kotlin)
     context("each `fullyQualifiedName` class should be in classpath") {
-        withData(GeneratorType.Java, GeneratorType.Kotlin) { type ->
+        withData(types) { type ->
             shouldNotThrow<ClassNotFoundException> { Class.forName(type.fullyQualifiedName) }
         }
     }
     context("toString() should return fully qualified name") {
-        withData(GeneratorType.Java, GeneratorType.Kotlin) { type ->
+        withData(types) { type ->
             type.toString() shouldBeEqual type.fullyQualifiedName
         }
     }
