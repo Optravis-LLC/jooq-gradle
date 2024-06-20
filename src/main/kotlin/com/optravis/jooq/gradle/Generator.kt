@@ -85,6 +85,7 @@ private fun JooqGeneratorConfig.toJooqGenerate(): Generate {
             .withKotlinNotNullRecordAttributes(true)
 
         GeneratorType.Java -> common
+        else -> error("unsupported generator: $generatorType. This is a bug, please report it to https://github.com/Optravis-LLC/jooq-gradle/issues")
     }
 }
 

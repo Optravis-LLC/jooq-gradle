@@ -39,12 +39,14 @@ public data class JooqGeneratorConfig(
 
 /** Generator type currently supported by this plugin. */
 @ExperimentalJooqGeneratorConfig
-public enum class GeneratorType {
-    Java,
-    Kotlin,
-    ;
-
-    internal val fullyQualifiedName: String get() = "org.jooq.codegen.${name}Generator"
+public class GeneratorType private constructor(
+    internal val fullyQualifiedName: String,
+) : Serializable {
+    public companion object {
+        public val Java: GeneratorType = create(lang = "Java")
+        public val Kotlin: GeneratorType = create(lang = "Kotlin")
+        private fun create(lang: String) = GeneratorType("org.jooq.codegen.${lang}Generator")
+    }
 }
 
 @ExperimentalJooqGeneratorConfig
