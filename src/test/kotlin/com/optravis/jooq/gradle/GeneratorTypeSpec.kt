@@ -15,9 +15,11 @@ class GeneratorTypeSpec : FunSpec({
     }
     test("should equal self") {
         GeneratorType.Kotlin shouldBeEqual GeneratorType.Kotlin
+        GeneratorType.Kotlin.fullyQualifiedName shouldBeEqual GeneratorType.Kotlin.fullyQualifiedName
         GeneratorType.Kotlin.hashCode() shouldBeEqual GeneratorType.Kotlin.hashCode()
     }
     test("should not equal other") {
         GeneratorType.Kotlin shouldNotBeEqual GeneratorType.Java
+        GeneratorType.Kotlin.fullyQualifiedName shouldNotBeEqual GeneratorType.Java.fullyQualifiedName
     }
 })
