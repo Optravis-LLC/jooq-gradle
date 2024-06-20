@@ -42,10 +42,14 @@ public data class JooqGeneratorConfig(
 public class GeneratorType private constructor(
     internal val fullyQualifiedName: String,
 ) : Serializable {
+    override fun toString(): String = fullyQualifiedName
+    override fun equals(other: Any?): Boolean = other is GeneratorType && fullyQualifiedName == other.fullyQualifiedName
+    override fun hashCode(): Int = fullyQualifiedName.hashCode()
+
     public companion object {
         public val Java: GeneratorType = create(lang = "Java")
         public val Kotlin: GeneratorType = create(lang = "Kotlin")
-        private fun create(lang: String) = GeneratorType("org.jooq.codegen.${lang}Generator")
+        internal fun create(lang: String) = GeneratorType("org.jooq.codegen.${lang}Generator")
     }
 }
 

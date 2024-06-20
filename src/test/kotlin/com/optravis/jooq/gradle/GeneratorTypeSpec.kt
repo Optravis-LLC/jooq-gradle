@@ -13,10 +13,17 @@ class GeneratorTypeSpec : FunSpec({
             shouldNotThrow<ClassNotFoundException> { Class.forName(type.fullyQualifiedName) }
         }
     }
+    context("toString() should return fully qualified name") {
+        withData(GeneratorType.Java, GeneratorType.Kotlin) { type ->
+            type.toString() shouldBeEqual type.fullyQualifiedName
+        }
+    }
     test("should equal self") {
         GeneratorType.Kotlin shouldBeEqual GeneratorType.Kotlin
+        GeneratorType.Kotlin shouldBeEqual GeneratorType.create("Kotlin")
         GeneratorType.Kotlin.fullyQualifiedName shouldBeEqual GeneratorType.Kotlin.fullyQualifiedName
         GeneratorType.Kotlin.hashCode() shouldBeEqual GeneratorType.Kotlin.hashCode()
+        GeneratorType.Kotlin.hashCode() shouldBeEqual GeneratorType.create("Kotlin").hashCode()
     }
     test("should not equal other") {
         GeneratorType.Kotlin shouldNotBeEqual GeneratorType.Java
