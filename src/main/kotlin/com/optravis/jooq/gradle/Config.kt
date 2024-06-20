@@ -28,10 +28,24 @@ internal data class JooqRootConfig(
 
 @ExperimentalJooqGeneratorConfig
 public data class JooqGeneratorConfig(
+    internal val generatorType: GeneratorType = GeneratorType.Kotlin,
     internal val deprecateUnknownTypes: Boolean = true,
     internal val javaTimeTypes: Boolean = true,
+    @Deprecated("Use pojos instead", ReplaceWith("pojos"))
     internal val kotlinPojos: Boolean = true,
+    internal val pojos: Boolean = kotlinPojos,
+    internal val daos: Boolean = true,
 ) : Serializable
+
+/** Generator type currently supported by this plugin. */
+@ExperimentalJooqGeneratorConfig
+public enum class GeneratorType {
+    Java,
+    Kotlin,
+    ;
+
+    internal val fullyQualifiedName: String get() = "org.jooq.codegen.${name}Generator"
+}
 
 @ExperimentalJooqGeneratorConfig
 public data class ContainerConfig(

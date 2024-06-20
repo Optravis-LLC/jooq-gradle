@@ -53,7 +53,7 @@ private fun JooqRootConfig.toConfiguration(jdbcUrl: String) =
         )
         .withGenerator(
             Generator()
-                .withName("org.jooq.codegen.KotlinGenerator")
+                .withName(generator.generatorType.fullyQualifiedName)
                 .withDatabase(
                     Database()
                         .withName(database.name)
@@ -61,25 +61,32 @@ private fun JooqRootConfig.toConfiguration(jdbcUrl: String) =
                         .withRecordVersionFields(database.recordVersionFields.joinToString("|"))
                         .withExcludes("flyway_schema_history")
                 )
-                .withGenerate(
-                    Generate()
-                        .withDaos(true)
-                        .withDeprecationOnUnknownTypes(generator.deprecateUnknownTypes)
-                        .withPojos(!generator.kotlinPojos)
-                        .withPojosAsKotlinDataClasses(generator.kotlinPojos)
-                        .withKotlinDefaultedNullablePojoAttributes(generator.kotlinPojos)
-                        .withKotlinDefaultedNullableRecordAttributes(generator.kotlinPojos)
-                        .withKotlinNotNullPojoAttributes(generator.kotlinPojos)
-                        .withKotlinNotNullInterfaceAttributes(generator.kotlinPojos)
-                        .withKotlinNotNullRecordAttributes(generator.kotlinPojos)
-                        .withJavaTimeTypes(generator.javaTimeTypes)
-                )
+                .withGenerate(generator.toJooqGenerate())
                 .withTarget(
                     Target()
                         .withPackageName(target.packageName)
                         .withDirectory(target.directory.absolutePath)
                 )
         )
+
+private fun JooqGeneratorConfig.toJooqGenerate(): Generate {
+    val common = Generate()
+        .withDaos(daos)
+        .withPojos(pojos)
+        .withJavaTimeTypes(javaTimeTypes)
+        .withDeprecationOnUnknownTypes(deprecateUnknownTypes)
+    return when (generatorType) {
+        GeneratorType.Kotlin -> common
+            .withPojosAsKotlinDataClasses(true)
+            .withKotlinDefaultedNullablePojoAttributes(true)
+            .withKotlinDefaultedNullableRecordAttributes(true)
+            .withKotlinNotNullPojoAttributes(true)
+            .withKotlinNotNullInterfaceAttributes(true)
+            .withKotlinNotNullRecordAttributes(true)
+
+        GeneratorType.Java -> common
+    }
+}
 
 private inline fun <T> ContainerConfig.run(action: (exposedPort: Int) -> T): T {
     val container = GenericContainer(DockerImageName.parse(image))
