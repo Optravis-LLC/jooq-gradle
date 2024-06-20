@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/Optravis-LLC/jooq-gradle/compare/v1.2.0...v1.2.1) (2024-06-20)
+
+
+### Bug Fixes
+
+* more robust equality check for `GeneratorType` ([#21](https://github.com/Optravis-LLC/jooq-gradle/issues/21)) ([b0a8452](https://github.com/Optravis-LLC/jooq-gradle/commit/b0a84523bcf6ddf8aa9a551c03c8c785d25e88d3))
+
 ## [1.2.0](https://github.com/Optravis-LLC/jooq-gradle/compare/v1.2.0...v1.2.0) (2024-06-20)
 
 
