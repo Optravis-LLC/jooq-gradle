@@ -31,7 +31,7 @@ public data class JooqGeneratorConfig(
     internal val generatorType: GeneratorType = GeneratorType.Kotlin,
     internal val deprecateUnknownTypes: Boolean = true,
     internal val javaTimeTypes: Boolean = true,
-    internal val kotlinPojos: Boolean = true,
+    internal val pojos: Boolean = true,
 ) : Serializable
 
 public enum class GeneratorType {
