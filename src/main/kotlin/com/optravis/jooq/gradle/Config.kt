@@ -38,6 +38,7 @@ public data class JooqGeneratorConfig(
 ) : Serializable
 
 /** Generator type currently supported by this plugin. */
+@ExperimentalJooqGeneratorConfig
 public enum class GeneratorType {
     Java,
     Kotlin,
