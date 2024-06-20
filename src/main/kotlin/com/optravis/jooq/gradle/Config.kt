@@ -37,11 +37,10 @@ public data class JooqGeneratorConfig(
     internal val daos: Boolean = true,
 ) : Serializable
 
+/** Generator type currently supported by this plugin. */
 public enum class GeneratorType {
     Java,
     Kotlin,
-    Scala,
-    XML,
     ;
 
     internal val fullyQualifiedName: String get() = "org.jooq.codegen.${name}Generator"
