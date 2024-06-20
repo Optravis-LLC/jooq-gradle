@@ -53,7 +53,7 @@ private fun JooqRootConfig.toConfiguration(jdbcUrl: String) =
         )
         .withGenerator(
             Generator()
-                .withName("org.jooq.codegen.KotlinGenerator")
+                .withName(generator.generatorType.fullyQualifiedName)
                 .withDatabase(
                     Database()
                         .withName(database.name)

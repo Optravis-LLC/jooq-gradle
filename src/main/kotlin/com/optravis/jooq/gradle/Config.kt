@@ -28,10 +28,21 @@ internal data class JooqRootConfig(
 
 @ExperimentalJooqGeneratorConfig
 public data class JooqGeneratorConfig(
+    internal val generatorType: GeneratorType = GeneratorType.Kotlin,
     internal val deprecateUnknownTypes: Boolean = true,
     internal val javaTimeTypes: Boolean = true,
     internal val kotlinPojos: Boolean = true,
 ) : Serializable
+
+public enum class GeneratorType {
+    Java,
+    Kotlin,
+    Scala,
+    XML,
+    ;
+
+    internal val fullyQualifiedName: String get() = "org.jooq.codegen.${name}Generator"
+}
 
 @ExperimentalJooqGeneratorConfig
 public data class ContainerConfig(
