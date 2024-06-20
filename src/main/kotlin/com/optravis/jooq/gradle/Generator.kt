@@ -61,7 +61,7 @@ private fun JooqRootConfig.toConfiguration(jdbcUrl: String) =
                         .withRecordVersionFields(database.recordVersionFields.joinToString("|"))
                         .withExcludes("flyway_schema_history")
                 )
-                .withGenerate(generateSpecifically())
+                .withGenerate(generator.toJooqGenerate())
                 .withTarget(
                     Target()
                         .withPackageName(target.packageName)
@@ -69,13 +69,13 @@ private fun JooqRootConfig.toConfiguration(jdbcUrl: String) =
                 )
         )
 
-private fun JooqRootConfig.generateSpecifically(): Generate {
+private fun JooqGeneratorConfig.toJooqGenerate(): Generate {
     val common = Generate()
-        .withDaos(generator.daos)
-        .withPojos(generator.pojos)
-        .withJavaTimeTypes(generator.javaTimeTypes)
-        .withDeprecationOnUnknownTypes(generator.deprecateUnknownTypes)
-    return when (generator.generatorType) {
+        .withDaos(daos)
+        .withPojos(pojos)
+        .withJavaTimeTypes(javaTimeTypes)
+        .withDeprecationOnUnknownTypes(deprecateUnknownTypes)
+    return when (generatorType) {
         GeneratorType.Kotlin -> common
             .withPojosAsKotlinDataClasses(true)
             .withKotlinDefaultedNullablePojoAttributes(true)
@@ -84,7 +84,7 @@ private fun JooqRootConfig.generateSpecifically(): Generate {
             .withKotlinNotNullInterfaceAttributes(true)
             .withKotlinNotNullRecordAttributes(true)
 
-        else -> common
+        GeneratorType.Java -> common
     }
 }
 
