@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/Optravis-LLC/jooq-gradle/compare/v1.2.1...v1.2.2) (2024-07-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency org.flywaydb:flyway-core to v10.15.2 ([#23](https://github.com/Optravis-LLC/jooq-gradle/issues/23)) ([cebf12d](https://github.com/Optravis-LLC/jooq-gradle/commit/cebf12d6af44d45081ef54ed348adb3fa1c0dee8))
+
 ## [1.2.1](https://github.com/Optravis-LLC/jooq-gradle/compare/v1.2.0...v1.2.1) (2024-06-20)
 
 
