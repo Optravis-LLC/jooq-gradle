@@ -9,24 +9,36 @@ plugins {
     id("com.optravis.jooq")
 }
 
-group = "com.optravis.jooq.gradle.example"
-
 repositories {
     mavenCentral()
 }
 
 // ATTENTION: If you change the config bellow, please update the README.md!
+
+// If defined, the `group` determines the package name of the generated code 
+group = "org.jooq.generated"
+
 @OptIn(ExperimentalJooqGeneratorConfig::class)
 jooqGenerator {
+
+    // Configure Postgres container version
     containerConfig.set(ContainerConfig.postgres(version = "16"))
+
+    // Configure jOOQ database
     jooqDbConfig.set(
         JooqDatabaseConfig.postgres(
             schema = "public",
-            recordVersionFields = listOf("version"),
+            recordVersionFields = emptyList(),
         )
     )
-    packageName.set("$group.jooq")
+
+    // Override the package name
+    packageName.set("$group.jooq") // If the group is not set, the default is `org.jooq.generated`
+
+    // Configure Flyway migration directory
     migrationDirectory.set(File("${project.layout.projectDirectory}/src/main/resources/db/migration"))
+
+    // Configure jOOQ generator options
     generatorConfig.set(
         JooqGeneratorConfig(
             generatorType = GeneratorType.Kotlin,
