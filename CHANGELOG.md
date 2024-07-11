@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.3](https://github.com/Optravis-LLC/jooq-gradle/compare/v1.2.2...v1.2.3) (2024-07-11)
+
+
+### Bug Fixes
+
+* Default generated packge to `org.jooq.generated` if the project `group` is not defined ([#27](https://github.com/Optravis-LLC/jooq-gradle/issues/27)) ([f769c0e](https://github.com/Optravis-LLC/jooq-gradle/commit/f769c0ef2e2aba3801c251962b49e7887420b4c6))
+
 ## [1.2.2](https://github.com/Optravis-LLC/jooq-gradle/compare/v1.2.1...v1.2.2) (2024-07-02)
 
 
