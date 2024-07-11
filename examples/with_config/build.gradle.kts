@@ -1,5 +1,7 @@
 import com.optravis.jooq.gradle.ContainerConfig
 import com.optravis.jooq.gradle.ExperimentalJooqGeneratorConfig
+import com.optravis.jooq.gradle.GeneratorType
+import com.optravis.jooq.gradle.JooqDatabaseConfig
 import com.optravis.jooq.gradle.JooqGeneratorConfig
 
 plugins {
@@ -17,8 +19,17 @@ repositories {
 @OptIn(ExperimentalJooqGeneratorConfig::class)
 jooqGenerator {
     containerConfig.set(ContainerConfig.postgres(version = "16"))
+    jooqDbConfig.set(
+        JooqDatabaseConfig.postgres(
+            schema = "public",
+            recordVersionFields = listOf("version"),
+        )
+    )
+    packageName.set("$group.jooq")
+    migrationDirectory.set(File("${project.layout.projectDirectory}/src/main/resources/db/migration"))
     generatorConfig.set(
         JooqGeneratorConfig(
+            generatorType = GeneratorType.Kotlin,
             deprecateUnknownTypes = true,
             daos = true,
             pojos = true,

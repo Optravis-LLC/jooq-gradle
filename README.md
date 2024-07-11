@@ -29,28 +29,53 @@ plugins {
 
 ## Configuration
 
-In general, this gradle plugin aims to require as little configuration as possible.
+In general, this gradle plugin aims to require as little configuration as possible and all configuration is optional.
 
-However, one may configure the jOOQ generation as follows:
+However, here's how it can be configured (values):
 
 *build.gradle.kts*
 
 ```kotlin
 import com.optravis.jooq.gradle.ContainerConfig
 import com.optravis.jooq.gradle.ExperimentalJooqGeneratorConfig
+import com.optravis.jooq.gradle.GeneratorType
+import com.optravis.jooq.gradle.JooqDatabaseConfig
 import com.optravis.jooq.gradle.JooqGeneratorConfig
+
+
+// By default, the `group` determines the package name of generated code 
+group = "com.optravis.jooq.gradle.example"
 
 @OptIn(ExperimentalJooqGeneratorConfig::class)
 jooqGenerator {
-  containerConfig.set(ContainerConfig.postgres(version = "16"))
-  generatorConfig.set(
-    JooqGeneratorConfig(
-      deprecateUnknownTypes = true,
-      daos = true,
-      pojos = true,
-      javaTimeTypes = true,
+
+    // Configure postgres container version (default to 16)
+    containerConfig.set(ContainerConfig.postgres(version = "16"))
+
+    // Configure jooq database
+    jooqDbConfig.set(
+        JooqDatabaseConfig.postgres(
+            schema = "public",
+            recordVersionFields = emptyList(),
+        )
     )
-  )
+
+    // Override the package name
+    packageName.set("$group.jooq")
+
+    // Configure Flyway migration directory
+    migrationDirectory.set(File("${project.layout.projectDirectory}/src/main/resources/db/migration"))
+
+    // Configure jOOQ generator options
+    generatorConfig.set(
+        JooqGeneratorConfig(
+            generatorType = GeneratorType.Kotlin,
+            deprecateUnknownTypes = true,
+            daos = true,
+            pojos = true,
+            javaTimeTypes = true,
+        )
+    )
 }
 ```
 
