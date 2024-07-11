@@ -16,7 +16,7 @@ repositories {
 // ATTENTION: If you change the config bellow, please update the README.md!
 
 // If defined, the `group` determines the package name of the generated code 
-group = "org.jooq.generated"
+group = "com.optravis.jooq.gradle.example"
 
 @OptIn(ExperimentalJooqGeneratorConfig::class)
 jooqGenerator {
