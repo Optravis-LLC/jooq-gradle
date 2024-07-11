@@ -5,7 +5,7 @@ An opinionated gradle plugin to generate jOOQ Kotlin code from Flyway migrations
 The goal is to be as easy as possible to set up jOOQ generation for projects that are using Kotlin, Flyway, and
 Postgres.
 
-The minimal setup for those project is:
+The minimal setup for those projects is:
 
 ```kotlin
 plugins {
@@ -21,7 +21,7 @@ plugins {
     * apply flyway migrations from `src/main/resources/db/migration`
     * run jOOQ code generator with a configuration tailored for Kotlin Projects
 * Make the `compileKotlin` task depend on `generateJooq`
-* Add the generated jooq code to the main source set
+* Add the generated jOOQ code to the main source set
 
 > [!NOTE]
 >
@@ -31,10 +31,9 @@ plugins {
 
 In general, this gradle plugin aims to require as little configuration as possible and all configuration is optional.
 
-However, here's how it can be configured (values):
+But here are the available configuration options with their default values:
 
 *build.gradle.kts*
-
 ```kotlin
 import com.optravis.jooq.gradle.ContainerConfig
 import com.optravis.jooq.gradle.ExperimentalJooqGeneratorConfig
@@ -43,16 +42,16 @@ import com.optravis.jooq.gradle.JooqDatabaseConfig
 import com.optravis.jooq.gradle.JooqGeneratorConfig
 
 
-// By default, the `group` determines the package name of generated code 
-group = "com.optravis.jooq.gradle.example"
+// If defined, the `group` determines the package name of the generated code 
+group = "org.jooq.generated"
 
 @OptIn(ExperimentalJooqGeneratorConfig::class)
 jooqGenerator {
 
-    // Configure postgres container version (default to 16)
+    // Configure Postgres container version
     containerConfig.set(ContainerConfig.postgres(version = "16"))
 
-    // Configure jooq database
+    // Configure jOOQ database
     jooqDbConfig.set(
         JooqDatabaseConfig.postgres(
             schema = "public",
@@ -61,7 +60,7 @@ jooqGenerator {
     )
 
     // Override the package name
-    packageName.set("$group.jooq")
+    packageName.set("$group.jooq") // If the group is not set, the default is `org.jooq.generated`
 
     // Configure Flyway migration directory
     migrationDirectory.set(File("${project.layout.projectDirectory}/src/main/resources/db/migration"))
