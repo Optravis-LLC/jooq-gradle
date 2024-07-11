@@ -7,7 +7,6 @@ plugins {
     id("com.optravis.jooq")
 }
 
-// IMPORTANT: The group determines the package of generated jooq files
 group = "com.optravis.jooq.gradle.example"
 
 repositories {

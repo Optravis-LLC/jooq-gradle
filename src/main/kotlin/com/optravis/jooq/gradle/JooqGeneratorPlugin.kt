@@ -46,7 +46,12 @@ public class JooqGeneratorPlugin : Plugin<Project> {
             jooqDbConfig.convention(ext.jooqDbConfig)
             migrationDirectory.convention(ext.migrationDirectory)
             generatorConfig.convention(ext.generatorConfig)
-            packageName.convention(ext.packageName.orElse("${project.group}.jooq"))
+            packageName.convention(ext.packageName.orElse(
+                project.group.toString()
+                    .takeUnless { it.isBlank() }
+                    ?.let { "$it.jooq" }
+                    ?: "org.jooq.generated"
+            ))
         }
         "compileJava" { dependsOn(generateTask) }
         "compileKotlin" { dependsOn(generateTask) }
