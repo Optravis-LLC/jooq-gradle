@@ -16,13 +16,22 @@ import org.gradle.kotlin.dsl.invoke
 import org.gradle.kotlin.dsl.register
 import java.io.File
 
-@ExperimentalJooqGeneratorConfig
 public interface JooqGeneratorExtension {
-    public val containerConfig: Property<ContainerConfig>
-    public val connectionConfig: Property<DbConnectionConfig>
-    public val jooqDbConfig: Property<JooqDatabaseConfig>
-    public val migrationDirectory: Property<File>
     public val packageName: Property<String>
+
+    @ExperimentalJooqGeneratorConfig
+    public val containerConfig: Property<ContainerConfig>
+
+    @ExperimentalJooqGeneratorConfig
+    public val connectionConfig: Property<DbConnectionConfig>
+
+    @ExperimentalJooqGeneratorConfig
+    public val jooqDbConfig: Property<JooqDatabaseConfig>
+
+    @ExperimentalJooqGeneratorConfig
+    public val migrationDirectory: Property<File>
+
+    @ExperimentalJooqGeneratorConfig
     public val generatorConfig: Property<JooqGeneratorConfig>
 }
 
@@ -41,17 +50,12 @@ public class JooqGeneratorPlugin : Plugin<Project> {
             group = "jOOQ"
             description = "Generate jOOQ classes from database migrations"
             outputDirectory = project.jooqTargetDir
+            packageName.convention(ext.packageName)
             containerConfig.convention(ext.containerConfig)
             connectionConfig.convention(ext.connectionConfig)
             jooqDbConfig.convention(ext.jooqDbConfig)
             migrationDirectory.convention(ext.migrationDirectory)
             generatorConfig.convention(ext.generatorConfig)
-            packageName.convention(ext.packageName.orElse(
-                project.group.toString()
-                    .takeUnless { it.isBlank() }
-                    ?.let { "$it.jooq" }
-                    ?: "org.jooq.generated"
-            ))
         }
         "compileJava" { dependsOn(generateTask) }
         "compileKotlin" { dependsOn(generateTask) }
@@ -76,6 +80,9 @@ public class JooqGeneratorPlugin : Plugin<Project> {
 private abstract class JooqGenerateTask : DefaultTask() {
 
     @get:Input
+    abstract val packageName: Property<String>
+
+    @get:Input
     abstract val containerConfig: Property<ContainerConfig>
 
     @get:Input
@@ -83,9 +90,6 @@ private abstract class JooqGenerateTask : DefaultTask() {
 
     @get:Input
     abstract val jooqDbConfig: Property<JooqDatabaseConfig>
-
-    @get:Input
-    abstract val packageName: Property<String>
 
     @get:Input
     abstract val generatorConfig: Property<JooqGeneratorConfig>
@@ -110,7 +114,12 @@ private abstract class JooqGenerateTask : DefaultTask() {
         migrationDirectory = migrationDirectory.get(),
         generator = generatorConfig.get(),
         target = JooqTargetConfig(
-            packageName = packageName.get(),
+            packageName = packageName.orNull ?: error(
+                """
+                    No package defined for jOOQ generation.
+                    Add something like: `jooqGenerator { packageName.set("my.package") }` in your gradle script.
+                """.trimIndent()
+            ),
             directory = outputDirectory,
         )
     )
