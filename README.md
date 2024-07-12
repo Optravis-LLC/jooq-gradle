@@ -61,7 +61,7 @@ jooqGenerator {
     )
 
     // Override the package name
-    packageName.set("$group.jooq") // If the group is not set, the default is `org.jooq.generated`
+    packageName.set("$group.jooq") // If neither the package name nor the group is set explicitly, the package name defaults to `org.jooq.generated`
 
     // Configure Flyway migration directory
     migrationDirectory.set(File("${project.layout.projectDirectory}/src/main/resources/db/migration"))
