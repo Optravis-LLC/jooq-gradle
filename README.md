@@ -14,7 +14,8 @@ plugins {
 }
 
 jooqGenerator {
-    packageName.set(TODO("define package name of generated code"))
+    // Define package name for generated code
+    packageName.set("<package-name>")
 }
 ```
 
@@ -53,7 +54,7 @@ group = "org.jooq.generated"
 @OptIn(ExperimentalJooqGeneratorConfig::class)
 jooqGenerator {
     // Configure package name for generator code (mandatory)
-    packageName.set(TODO("package name"))
+    packageName.set("<package-name>")
 
     // Configure Postgres container version
     containerConfig.set(ContainerConfig.postgres(version = "16"))
