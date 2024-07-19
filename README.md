@@ -34,7 +34,7 @@ jooqGenerator {
 
 ## Configuration
 
-In general, this gradle plugin aims to require as little configuration as possible and all configuration is optional.
+In general, this gradle plugin aims to require as little configuration as possible and almost all configuration is optional.
 
 But here are the available configuration options with their default values:
 
