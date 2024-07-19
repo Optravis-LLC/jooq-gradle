@@ -52,6 +52,8 @@ group = "org.jooq.generated"
 
 @OptIn(ExperimentalJooqGeneratorConfig::class)
 jooqGenerator {
+    // Configure package name for generator code (mandatory)
+    packageName.set(TODO("package name"))
 
     // Configure Postgres container version
     containerConfig.set(ContainerConfig.postgres(version = "16"))
@@ -63,9 +65,6 @@ jooqGenerator {
             recordVersionFields = emptyList(),
         )
     )
-
-    // Override the package name
-    packageName.set("$group.jooq") // If neither the package name nor the group is set explicitly, the package name defaults to `org.jooq.generated`
 
     // Configure Flyway migration directory
     migrationDirectory.set(File("${project.layout.projectDirectory}/src/main/resources/db/migration"))

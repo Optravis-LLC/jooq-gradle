@@ -14,19 +14,15 @@ repositories {
 }
 
 // ATTENTION: If you change the config bellow, please update the README.md!
-
-// If defined, the `group` determines the package name of the generated code
-group = "com.optravis.jooq.gradle.example"
-
 @OptIn(ExperimentalJooqGeneratorConfig::class)
 jooqGenerator {
     // Configure package name for generator code (mandatory)
     packageName.set("com.optravis.jooq.gradle.example.jooq")
 
-    // Configure Postgres container version (optional)
+    // Configure Postgres container version
     containerConfig.set(ContainerConfig.postgres(version = "16"))
 
-    // Configure jOOQ database (optional)
+    // Configure jOOQ database
     jooqDbConfig.set(
         JooqDatabaseConfig.postgres(
             schema = "public",
@@ -34,13 +30,10 @@ jooqGenerator {
         )
     )
 
-    // Override the package name (optional)
-    packageName.set("$group.jooq") // If the group is not set, the default is `org.jooq.generated`
-
-    // Configure Flyway migration directory (optional)
+    // Configure Flyway migration directory
     migrationDirectory.set(File("${project.layout.projectDirectory}/src/main/resources/db/migration"))
 
-    // Configure jOOQ generator options (optional)
+    // Configure jOOQ generator options
     generatorConfig.set(
         JooqGeneratorConfig(
             generatorType = GeneratorType.Kotlin,
