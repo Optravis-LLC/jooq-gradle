@@ -5,7 +5,7 @@ import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.collections.shouldBeEmpty
 import org.jooq.SQLDialect
 import org.jooq.impl.DSL
-import org.jooq.generated.tables.references.BOOK
+import com.optravis.jooq.gradle.example.jooq.tables.references.BOOK
 
 class ExampleTest : FunSpec({
     isolationMode = IsolationMode.InstancePerLeaf

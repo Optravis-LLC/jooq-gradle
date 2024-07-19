@@ -12,6 +12,10 @@ plugins {
     kotlin("jvm") version "<kotlin version>" // The Kotlin plugin is required
     id("com.optravis.jooq") version "<version>" // Install jOOQ generation plugin
 }
+
+jooqGenerator {
+    packageName.set(TODO("define package name of generated code"))
+}
 ```
 
 ## What does the plugin do?

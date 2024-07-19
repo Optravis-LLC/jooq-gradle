@@ -3,6 +3,10 @@ plugins {
     id("com.optravis.jooq")
 }
 
+jooqGenerator {
+    packageName.set("com.optravis.jooq.gradle.example.jooq")
+}
+
 repositories {
     mavenCentral()
 }
