@@ -1,5 +1,7 @@
 import com.optravis.jooq.gradle.ContainerConfig
 import com.optravis.jooq.gradle.ExperimentalJooqGeneratorConfig
+import com.optravis.jooq.gradle.GeneratorType
+import com.optravis.jooq.gradle.JooqDatabaseConfig
 import com.optravis.jooq.gradle.JooqGeneratorConfig
 
 plugins {
@@ -14,10 +16,27 @@ repositories {
 // ATTENTION: If you change the config bellow, please update the README.md!
 @OptIn(ExperimentalJooqGeneratorConfig::class)
 jooqGenerator {
+    // Configure package name for generator code (mandatory)
     packageName.set("com.optravis.jooq.gradle.example.jooq")
+
+    // Configure Postgres container version
     containerConfig.set(ContainerConfig.postgres(version = "16"))
+
+    // Configure jOOQ database
+    jooqDbConfig.set(
+        JooqDatabaseConfig.postgres(
+            schema = "public",
+            recordVersionFields = emptyList(),
+        )
+    )
+
+    // Configure Flyway migration directory
+    migrationDirectory.set(File("${project.layout.projectDirectory}/src/main/resources/db/migration"))
+
+    // Configure jOOQ generator options
     generatorConfig.set(
         JooqGeneratorConfig(
+            generatorType = GeneratorType.Kotlin,
             deprecateUnknownTypes = true,
             daos = true,
             pojos = true,

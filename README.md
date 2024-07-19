@@ -5,7 +5,7 @@ An opinionated gradle plugin to generate jOOQ Kotlin code from Flyway migrations
 The goal is to be as easy as possible to set up jOOQ generation for projects that are using Kotlin, Flyway, and
 Postgres.
 
-The minimal setup for those project is:
+The minimal setup for those projects is:
 
 ```kotlin
 plugins {
@@ -14,7 +14,8 @@ plugins {
 }
 
 jooqGenerator {
-    packageName.set(TODO("define package name of generated code"))
+    // Define package name for generated code
+    packageName.set("<package-name>")
 }
 ```
 
@@ -25,7 +26,7 @@ jooqGenerator {
     * apply flyway migrations from `src/main/resources/db/migration`
     * run jOOQ code generator with a configuration tailored for Kotlin Projects
 * Make the `compileKotlin` task depend on `generateJooq`
-* Add the generated jooq code to the main source set
+* Add the generated jOOQ code to the main source set
 
 > [!NOTE]
 >
@@ -33,22 +34,41 @@ jooqGenerator {
 
 ## Configuration
 
-In general, this gradle plugin aims to require as little configuration as possible.
+In general, this gradle plugin aims to require as little configuration as possible and almost all configuration is optional.
 
-However, one may configure the jOOQ generation as follows:
+But here are the available configuration options with their default values:
 
 *build.gradle.kts*
-
 ```kotlin
 import com.optravis.jooq.gradle.ContainerConfig
 import com.optravis.jooq.gradle.ExperimentalJooqGeneratorConfig
+import com.optravis.jooq.gradle.GeneratorType
+import com.optravis.jooq.gradle.JooqDatabaseConfig
 import com.optravis.jooq.gradle.JooqGeneratorConfig
 
 @OptIn(ExperimentalJooqGeneratorConfig::class)
 jooqGenerator {
+    // Configure package name for generator code (mandatory)
+    packageName.set("<package-name>")
+
+    // Configure Postgres container version
     containerConfig.set(ContainerConfig.postgres(version = "16"))
+
+    // Configure jOOQ database
+    jooqDbConfig.set(
+        JooqDatabaseConfig.postgres(
+            schema = "public",
+            recordVersionFields = emptyList(),
+        )
+    )
+
+    // Configure Flyway migration directory
+    migrationDirectory.set(File("${project.layout.projectDirectory}/src/main/resources/db/migration"))
+
+    // Configure jOOQ generator options
     generatorConfig.set(
         JooqGeneratorConfig(
+            generatorType = GeneratorType.Kotlin,
             deprecateUnknownTypes = true,
             daos = true,
             pojos = true,
