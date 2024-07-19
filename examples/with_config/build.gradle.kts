@@ -7,8 +7,6 @@ plugins {
     id("com.optravis.jooq")
 }
 
-group = "com.optravis.jooq.gradle.example"
-
 repositories {
     mavenCentral()
 }
@@ -16,6 +14,7 @@ repositories {
 // ATTENTION: If you change the config bellow, please update the README.md!
 @OptIn(ExperimentalJooqGeneratorConfig::class)
 jooqGenerator {
+    packageName.set("com.optravis.jooq.gradle.example.jooq")
     containerConfig.set(ContainerConfig.postgres(version = "16"))
     generatorConfig.set(
         JooqGeneratorConfig(
