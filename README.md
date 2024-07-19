@@ -46,11 +46,6 @@ import com.optravis.jooq.gradle.GeneratorType
 import com.optravis.jooq.gradle.JooqDatabaseConfig
 import com.optravis.jooq.gradle.JooqGeneratorConfig
 
-
-// The `group` determines the package name of the generated code,
-// unless you specify the package name explicitly.
-group = "org.jooq.generated"
-
 @OptIn(ExperimentalJooqGeneratorConfig::class)
 jooqGenerator {
     // Configure package name for generator code (mandatory)
