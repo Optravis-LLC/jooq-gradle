@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.0.0](https://github.com/Optravis-LLC/jooq-gradle/compare/v1.2.3...v2.0.0) (2024-08-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* require `packageName` to be defined ([#33](https://github.com/Optravis-LLC/jooq-gradle/issues/33))
+
+### Features
+
+* require `packageName` to be defined ([#33](https://github.com/Optravis-LLC/jooq-gradle/issues/33)) ([9776e55](https://github.com/Optravis-LLC/jooq-gradle/commit/9776e55db273afbfd3e8b0ae2ee43ac0828a7251))
+
+
+### Bug Fixes
+
+* **deps:** update flyway to v10.16.0 ([#35](https://github.com/Optravis-LLC/jooq-gradle/issues/35)) ([c283bc0](https://github.com/Optravis-LLC/jooq-gradle/commit/c283bc0177d11ec00964fa91b6a6ed7f3c3e48b5))
+* **deps:** update flyway to v10.17.0 ([#37](https://github.com/Optravis-LLC/jooq-gradle/issues/37)) ([dac62e2](https://github.com/Optravis-LLC/jooq-gradle/commit/dac62e2536aed465280164baa7bbf839e1fb9698))
+* **deps:** update testcontainers-java monorepo to v1.20.0 ([#34](https://github.com/Optravis-LLC/jooq-gradle/issues/34)) ([37f3f12](https://github.com/Optravis-LLC/jooq-gradle/commit/37f3f12ac67fc35c51e4734c027b033faf590094))
+* **deps:** update testcontainers-java monorepo to v1.20.1 ([#38](https://github.com/Optravis-LLC/jooq-gradle/issues/38)) ([35bb08e](https://github.com/Optravis-LLC/jooq-gradle/commit/35bb08ec5a609028496db6029b4ef6db4f889a1e))
+
 ## [1.2.3](https://github.com/Optravis-LLC/jooq-gradle/compare/v1.2.2...v1.2.3) (2024-07-11)
 
 
