@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/Optravis-LLC/jooq-gradle/compare/v2.0.0...v2.0.1) (2024-08-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency org.jetbrains.kotlin.jvm to v2.0.10 ([#39](https://github.com/Optravis-LLC/jooq-gradle/issues/39)) ([cfdf340](https://github.com/Optravis-LLC/jooq-gradle/commit/cfdf3401b29e00642913fdf00ef128f7480807d4))
+
 ## [2.0.0](https://github.com/Optravis-LLC/jooq-gradle/compare/v1.2.3...v2.0.0) (2024-08-05)
 
 
