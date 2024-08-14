@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.0.1](https://github.com/Optravis-LLC/jooq-gradle/compare/v2.0.0...v2.0.1) (2024-08-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency org.jetbrains.kotlin.jvm to v2.0.10 ([#39](https://github.com/Optravis-LLC/jooq-gradle/issues/39)) ([cfdf340](https://github.com/Optravis-LLC/jooq-gradle/commit/cfdf3401b29e00642913fdf00ef128f7480807d4))
+* **deps:** update flyway to v10.17.1 ([#42](https://github.com/Optravis-LLC/jooq-gradle/issues/42)) ([31287f6](https://github.com/Optravis-LLC/jooq-gradle/commit/31287f665118053c1b896649b2a16e8e941a9262))
+* **deps:** update jooq to v3.19.11 ([#41](https://github.com/Optravis-LLC/jooq-gradle/issues/41)) ([d160b70](https://github.com/Optravis-LLC/jooq-gradle/commit/d160b703adfdf49ad9e52842919e6561af88b8c9))
+
 ## [2.0.0](https://github.com/Optravis-LLC/jooq-gradle/compare/v1.2.3...v2.0.0) (2024-08-05)
 
 
