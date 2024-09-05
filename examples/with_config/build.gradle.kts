@@ -3,6 +3,7 @@ import com.optravis.jooq.gradle.ExperimentalJooqGeneratorConfig
 import com.optravis.jooq.gradle.GeneratorType
 import com.optravis.jooq.gradle.JooqDatabaseConfig
 import com.optravis.jooq.gradle.JooqGeneratorConfig
+import org.jooq.meta.jaxb.VisibilityModifier
 
 plugins {
     alias(libs.plugins.kotlin.jvm)
@@ -41,6 +42,7 @@ jooqGenerator {
             daos = true,
             pojos = true,
             javaTimeTypes = true,
+            visibilityModifier = VisibilityModifier.DEFAULT,
         )
     )
 }

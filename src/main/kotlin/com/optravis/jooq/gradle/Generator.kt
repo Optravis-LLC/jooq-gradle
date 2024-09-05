@@ -71,6 +71,7 @@ private fun JooqRootConfig.toConfiguration(jdbcUrl: String) =
 
 private fun JooqGeneratorConfig.toJooqGenerate(): Generate {
     val common = Generate()
+        .withVisibilityModifier(visibilityModifier)
         .withDaos(daos)
         .withPojos(pojos)
         .withJavaTimeTypes(javaTimeTypes)
