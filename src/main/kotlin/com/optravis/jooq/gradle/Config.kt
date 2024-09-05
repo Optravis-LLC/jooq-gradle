@@ -1,8 +1,8 @@
 package com.optravis.jooq.gradle
 
+import org.jooq.meta.jaxb.VisibilityModifier
 import java.io.File
 import java.io.Serializable
-
 
 @RequiresOptIn(
     message = "This configuration API is not yet stabilized and is subject to breaking changes",
@@ -35,6 +35,7 @@ public data class JooqGeneratorConfig(
     internal val kotlinPojos: Boolean = true,
     internal val pojos: Boolean = kotlinPojos,
     internal val daos: Boolean = true,
+    internal val visibilityModifier: VisibilityModifier = VisibilityModifier.DEFAULT
 ) : Serializable
 
 /** Generator type currently supported by this plugin. */
