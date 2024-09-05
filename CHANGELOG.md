@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/Optravis-LLC/jooq-gradle/compare/v2.0.3...v2.1.0) (2024-09-05)
+
+
+### Features
+
+* **configuration:** allow to configure the generated visibility modifier ([#51](https://github.com/Optravis-LLC/jooq-gradle/issues/51)) ([4d82be5](https://github.com/Optravis-LLC/jooq-gradle/commit/4d82be5732a62834af3cb64d4c1e1bbf57916acc))
+
 ## [2.0.3](https://github.com/Optravis-LLC/jooq-gradle/compare/v2.0.2...v2.0.3) (2024-09-03)
 
 
