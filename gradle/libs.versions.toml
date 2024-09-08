@@ -1,6 +1,6 @@
 [versions]
 kotlin = "2.0.20"
-detekt = "1.23.6"
+detekt = "1.23.7"
 kotest = "5.9.1"
 flyway = "10.17.3"
 jooq = "3.19.11"
