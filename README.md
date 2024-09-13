@@ -21,16 +21,17 @@ jooqGenerator {
 
 ## What does the plugin do?
 
-* Add `generateJooq` task:
+* Adds a `generateJooq` task:
     * start a PostgreSQL docker container
     * apply flyway migrations from `src/main/resources/db/migration`
     * run jOOQ code generator with a configuration tailored for Kotlin Projects
-* Make the `compileKotlin` task depend on `generateJooq`
-* Add the generated jOOQ code to the main source set
+* Makes the `compileKotlin` task depend on `generateJooq`
+* Adds the generated jOOQ code to the main source set
 
 > [!NOTE]
 >
-> This plugin requires a `docker` installation
+> A `docker` installation is required
+
 
 ## Configuration
 
@@ -84,7 +85,7 @@ jooqGenerator {
 >
 > The configuration API is experimental (hence the requirement to `@OptIn`)
 >
-> Breaking changes to that API may be introduced in minor releases of the plugin!
+> Breaking changes to that API may be introduced in minor plugin releases!
 
 ## MIT License
 
