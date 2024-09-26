@@ -2,7 +2,7 @@
 kotlin = "2.0.20"
 detekt = "1.23.7"
 kotest = "5.9.1"
-flyway = "10.18.0"
+flyway = "10.18.2"
 jooq = "3.19.12"
 testcontainers = "1.20.1"
 postgres = "42.7.4"
