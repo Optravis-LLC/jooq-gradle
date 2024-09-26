@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.1.2](https://github.com/Optravis-LLC/jooq-gradle/compare/v2.1.1...v2.1.2) (2024-09-26)
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.zaxxer:hikaricp to v6 ([#60](https://github.com/Optravis-LLC/jooq-gradle/issues/60)) ([224cee4](https://github.com/Optravis-LLC/jooq-gradle/commit/224cee4b8f33be9339e6bd12d779dee47f878846))
+* **deps:** update flyway to v10.18.2 ([#62](https://github.com/Optravis-LLC/jooq-gradle/issues/62)) ([c5ad81a](https://github.com/Optravis-LLC/jooq-gradle/commit/c5ad81ac0f5d9ccfd0ab7de30cc8fd977f68baa3))
+
 ## [2.1.1](https://github.com/Optravis-LLC/jooq-gradle/compare/v2.1.0...v2.1.1) (2024-09-13)
 
 
