@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.3](https://github.com/Optravis-LLC/jooq-gradle/compare/v2.1.2...v2.1.3) (2024-10-01)
+
+
+### Bug Fixes
+
+* **deps:** update testcontainers-java monorepo to v1.20.2 ([#64](https://github.com/Optravis-LLC/jooq-gradle/issues/64)) ([4ca77d5](https://github.com/Optravis-LLC/jooq-gradle/commit/4ca77d5e218b363ae09f4b18d9e9c53528cd832a))
+
 ## [2.1.2](https://github.com/Optravis-LLC/jooq-gradle/compare/v2.1.1...v2.1.2) (2024-09-26)
 
 
