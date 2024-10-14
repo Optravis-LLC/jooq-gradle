@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.4](https://github.com/Optravis-LLC/jooq-gradle/compare/v2.1.3...v2.1.4) (2024-10-14)
+
+
+### Bug Fixes
+
+* **deps:** update flyway to v10.19.0 ([#66](https://github.com/Optravis-LLC/jooq-gradle/issues/66)) ([6293651](https://github.com/Optravis-LLC/jooq-gradle/commit/629365112ee07bf1707bcd5cbe4813f28e078aac))
+
 ## [2.1.3](https://github.com/Optravis-LLC/jooq-gradle/compare/v2.1.2...v2.1.3) (2024-10-01)
 
 
