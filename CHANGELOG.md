@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.8](https://github.com/Optravis-LLC/jooq-gradle/compare/v2.1.7...v2.1.8) (2024-11-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.zaxxer:hikaricp to v6.1.0 ([#77](https://github.com/Optravis-LLC/jooq-gradle/issues/77)) ([05f0f88](https://github.com/Optravis-LLC/jooq-gradle/commit/05f0f880c4acc18ad59a3277e27588eed1da413a))
+
 ## [2.1.7](https://github.com/Optravis-LLC/jooq-gradle/compare/v2.1.6...v2.1.7) (2024-10-25)
 
 
