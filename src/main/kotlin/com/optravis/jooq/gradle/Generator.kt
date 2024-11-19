@@ -2,8 +2,6 @@
 
 package com.optravis.jooq.gradle
 
-import com.zaxxer.hikari.HikariConfig
-import com.zaxxer.hikari.HikariDataSource
 import org.flywaydb.core.Flyway
 import org.jooq.codegen.GenerationTool
 import org.jooq.meta.jaxb.Configuration
@@ -12,6 +10,7 @@ import org.jooq.meta.jaxb.Generate
 import org.jooq.meta.jaxb.Generator
 import org.jooq.meta.jaxb.Jdbc
 import org.jooq.meta.jaxb.Target
+import org.postgresql.ds.PGSimpleDataSource
 import org.testcontainers.containers.GenericContainer
 import org.testcontainers.containers.wait.strategy.Wait
 import org.testcontainers.utility.DockerImageName
@@ -36,11 +35,14 @@ internal fun JooqRootConfig.generate() {
 }
 
 private fun DbConnectionConfig.isReady(jdbcUrl: String): Boolean {
-    val config = HikariConfig()
-    config.jdbcUrl = jdbcUrl
-    config.username = user
-    config.password = password
-    return runCatching { HikariDataSource(config).connection.close() }.isSuccess
+    return runCatching {
+        PGSimpleDataSource().apply {
+            setUrl(jdbcUrl)
+            user = this@isReady.user
+            password = this@isReady.password
+            connection.close()
+        }
+    }.isSuccess
 }
 
 private fun JooqRootConfig.toConfiguration(jdbcUrl: String) =

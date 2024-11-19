@@ -19,11 +19,10 @@ dependencies {
     implementation(libs.jooq.codegen)
     implementation(libs.flyway.core)
     implementation(libs.testcontainers.core)
-    implementation(libs.hikari)
+    implementation(libs.postgresql)
 
     runtimeOnly(libs.jooq.meta.kotlin)
     runtimeOnly(libs.flyway.postgres)
-    runtimeOnly(libs.postgresql)
 
     testImplementation(rootProject.libs.kotest.runner)
     testImplementation(rootProject.libs.kotest.assertions)
