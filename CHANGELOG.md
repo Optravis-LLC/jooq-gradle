@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.11](https://github.com/Optravis-LLC/jooq-gradle/compare/v2.1.10...v2.1.11) (2024-11-19)
+
+
+### Bug Fixes
+
+* **deps:** remove dependency on hikariCP ([#85](https://github.com/Optravis-LLC/jooq-gradle/issues/85)) ([4ee375f](https://github.com/Optravis-LLC/jooq-gradle/commit/4ee375f682c65cb03d296204baeb560775d2f236))
+
 ## [2.1.10](https://github.com/Optravis-LLC/jooq-gradle/compare/v2.1.9...v2.1.10) (2024-11-18)
 
 
