@@ -5,14 +5,9 @@
 
 ### Bug Fixes
 
-* **deps:** update dependency org.flywaydb:flyway-core to v10.22.0 ([#89](https://github.com/Optravis-LLC/jooq-gradle/issues/89)) ([c081d01](https://github.com/Optravis-LLC/jooq-gradle/commit/c081d01b83d96adc7d9c594d36ea2333586ddb45))
 * **deps:** update flyway to v11 (major) ([#91](https://github.com/Optravis-LLC/jooq-gradle/issues/91)) ([9e73632](https://github.com/Optravis-LLC/jooq-gradle/commit/9e7363238d09246daf1bcbaa03439ea7e65cf922))
 * **deps:** update testcontainers-java monorepo to v1.20.4 ([#88](https://github.com/Optravis-LLC/jooq-gradle/issues/88)) ([11b938a](https://github.com/Optravis-LLC/jooq-gradle/commit/11b938a48a25626f8828a14459ae539d1214ea36))
 
-
-### Miscellaneous Chores
-
-* Mark next release as `2.2.0` ([f8923c3](https://github.com/Optravis-LLC/jooq-gradle/commit/f8923c36bf0115478bcbfde45660d1c446be7510))
 
 ## [2.1.11](https://github.com/Optravis-LLC/jooq-gradle/compare/v2.1.10...v2.1.11) (2024-11-19)
 
