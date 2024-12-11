@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.2](https://github.com/Optravis-LLC/jooq-gradle/compare/v2.2.1...v2.2.2) (2024-12-11)
+
+
+### Bug Fixes
+
+* **deps:** update jooq to v3.19.16 ([#95](https://github.com/Optravis-LLC/jooq-gradle/issues/95)) ([943cf8a](https://github.com/Optravis-LLC/jooq-gradle/commit/943cf8a24aa62f319b8e4c9b310fbae181182928))
+
 ## [2.2.1](https://github.com/Optravis-LLC/jooq-gradle/compare/v2.2.0...v2.2.1) (2024-12-04)
 
 
