@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.2.4](https://github.com/Optravis-LLC/jooq-gradle/compare/v2.2.3...v2.2.4) (2025-01-27)
+
+
+### Bug Fixes
+
+* **deps:** update dependency org.postgresql:postgresql to v42.7.5 ([#102](https://github.com/Optravis-LLC/jooq-gradle/issues/102)) ([6e3c4c4](https://github.com/Optravis-LLC/jooq-gradle/commit/6e3c4c4e548c8d82c0d28ba0d1a81ab523139768))
+* **deps:** update flyway to v11.2.0 ([#104](https://github.com/Optravis-LLC/jooq-gradle/issues/104)) ([b501cc5](https://github.com/Optravis-LLC/jooq-gradle/commit/b501cc54896c51204c682f330fc3ee187a0c541a))
+* **deps:** update jooq to v3.19.18 ([#103](https://github.com/Optravis-LLC/jooq-gradle/issues/103)) ([a4ff41e](https://github.com/Optravis-LLC/jooq-gradle/commit/a4ff41e97c4fd8004b62bfef5d6479d29176ca9e))
+
 ## [2.2.3](https://github.com/Optravis-LLC/jooq-gradle/compare/v2.2.2...v2.2.3) (2025-01-13)
 
 
