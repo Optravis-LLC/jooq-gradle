@@ -15,22 +15,22 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
 
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@3a4f6e1af504cf6a31855fa899c6aa5355ba6c12 # v4
         with:
           distribution: corretto
           java-version: 21
           cache: gradle
 
-      - uses: taiki-e/install-action@v2
+      - uses: taiki-e/install-action@63f2419bb6a642b9973690fd13cf07b750f65635 # v2
         with:
           tool: just@1
 
       - run: just verify
 
       - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2
+        uses: EnricoMi/publish-unit-test-result-action@170bf24d20d201b842d7a52403b73ed297e6645b # v2
         if: always()
         with:
           files: '**/test-results/**/*.xml'
@@ -52,7 +52,7 @@ jobs:
       released: ${{ steps.release.outputs.release_created }}
     steps:
       - id: release
-        uses: googleapis/release-please-action@v4
+        uses: googleapis/release-please-action@a02a34c4d625f9be7cb89156071d8567266a2445 # v4
         with:
           release-type: simple
 
@@ -66,15 +66,15 @@ jobs:
       contents: write
       packages: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
 
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@3a4f6e1af504cf6a31855fa899c6aa5355ba6c12 # v4
         with:
           distribution: corretto
           java-version: 21
           cache: gradle
 
-      - uses: taiki-e/install-action@v2
+      - uses: taiki-e/install-action@63f2419bb6a642b9973690fd13cf07b750f65635 # v2
         with:
           tool: just@1
 
