@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.5](https://github.com/Optravis-LLC/jooq-gradle/compare/v3.0.4...v3.0.5) (2025-03-28)
+
+
+### Bug Fixes
+
+* **deps:** update flyway to v11.5.0 ([#133](https://github.com/Optravis-LLC/jooq-gradle/issues/133)) ([eee8d62](https://github.com/Optravis-LLC/jooq-gradle/commit/eee8d62464c10187bf8c23ddc23ac84a6671d1ee))
+
 ## [3.0.4](https://github.com/Optravis-LLC/jooq-gradle/compare/v3.0.3...v3.0.4) (2025-03-24)
 
 
