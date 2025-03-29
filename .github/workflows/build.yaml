@@ -23,7 +23,7 @@ jobs:
           java-version: 21
           cache: gradle
 
-      - uses: taiki-e/install-action@63f2419bb6a642b9973690fd13cf07b750f65635 # v2
+      - uses: taiki-e/install-action@1c861c252bd329898ca0817dc2913d5963834965 # v2
         with:
           tool: just@1
 
@@ -74,7 +74,7 @@ jobs:
           java-version: 21
           cache: gradle
 
-      - uses: taiki-e/install-action@63f2419bb6a642b9973690fd13cf07b750f65635 # v2
+      - uses: taiki-e/install-action@1c861c252bd329898ca0817dc2913d5963834965 # v2
         with:
           tool: just@1
 
