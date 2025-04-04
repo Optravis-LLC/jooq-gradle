@@ -5,7 +5,6 @@
 
 ### Bug Fixes
 
-* **deps:** update flyway to v11.5.0 ([#133](https://github.com/Optravis-LLC/jooq-gradle/issues/133)) ([eee8d62](https://github.com/Optravis-LLC/jooq-gradle/commit/eee8d62464c10187bf8c23ddc23ac84a6671d1ee))
 * **deps:** update flyway to v11.6.0 ([#142](https://github.com/Optravis-LLC/jooq-gradle/issues/142)) ([5075f56](https://github.com/Optravis-LLC/jooq-gradle/commit/5075f56385cd9c51a2ded30a56e0abd28f6dbde7))
 * **deps:** update jooq to v3.20.3 ([#141](https://github.com/Optravis-LLC/jooq-gradle/issues/141)) ([319bc23](https://github.com/Optravis-LLC/jooq-gradle/commit/319bc23cd9aa6f947bf9653db842335c08ed3134))
 
