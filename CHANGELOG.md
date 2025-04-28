@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.0.7](https://github.com/Optravis-LLC/jooq-gradle/compare/v3.0.6...v3.0.7) (2025-04-28)
+
+
+### Bug Fixes
+
+* **deps:** update flyway to v11.8.0 ([#148](https://github.com/Optravis-LLC/jooq-gradle/issues/148)) ([3491e26](https://github.com/Optravis-LLC/jooq-gradle/commit/3491e26360e8356828c1f52a68bd3283b941fcce))
+* **deps:** update testcontainers-java monorepo to v1.21.0 ([#149](https://github.com/Optravis-LLC/jooq-gradle/issues/149)) ([cb1879f](https://github.com/Optravis-LLC/jooq-gradle/commit/cb1879ff1d5b312e6fccbf0e53bed997246fedbb))
+
 ## [3.0.6](https://github.com/Optravis-LLC/jooq-gradle/compare/v3.0.5...v3.0.6) (2025-04-14)
 
 
