@@ -12,7 +12,7 @@ env:
 jobs:
   # Verifies all tests pass
   verify:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
@@ -24,9 +24,7 @@ jobs:
           cache: gradle
 
       - name: Install just
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y just="1.21.0-1"
+        run: sudo apt-get install -y just
 
       - run: just verify
 
@@ -61,7 +59,7 @@ jobs:
   publish:
     needs: [ verify, release ]
     if: ${{ needs.verify.result == 'success' && needs.release.outputs.released }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     permissions:
       contents: write
@@ -76,9 +74,7 @@ jobs:
           cache: gradle
 
       - name: Install just
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y just="1.21.0-1"
+        run: sudo apt-get install -y just
 
       - run: just publish
         env:
