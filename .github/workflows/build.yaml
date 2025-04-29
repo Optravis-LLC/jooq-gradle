@@ -12,7 +12,7 @@ env:
 jobs:
   # Verifies all tests pass
   verify:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
@@ -23,9 +23,8 @@ jobs:
           java-version: 21
           cache: gradle
 
-      - uses: taiki-e/install-action@ab3728c7ba6948b9b429627f4d55a68842b27f18 # v2
-        with:
-          tool: just@1
+      - name: Install just
+        run: sudo apt-get install -y just
 
       - run: just verify
 
@@ -60,7 +59,7 @@ jobs:
   publish:
     needs: [ verify, release ]
     if: ${{ needs.verify.result == 'success' && needs.release.outputs.released }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     permissions:
       contents: write
@@ -74,9 +73,8 @@ jobs:
           java-version: 21
           cache: gradle
 
-      - uses: taiki-e/install-action@ab3728c7ba6948b9b429627f4d55a68842b27f18 # v2
-        with:
-          tool: just@1
+      - name: Install just
+        run: sudo apt-get install -y just
 
       - run: just publish
         env:
