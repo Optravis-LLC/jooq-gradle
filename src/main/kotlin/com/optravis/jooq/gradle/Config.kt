@@ -67,8 +67,9 @@ public data class ContainerConfig(
             password: String = Default.PASSWORD,
             version: String = "16",
             port: Int = 5432,
+            baseImage: String = "postgres:"
         ): ContainerConfig = ContainerConfig(
-            image = "postgres:$version",
+            image = "$baseImage$version",
             port = port,
             environment = mapOf(
                 "POSTGRES_DB" to db,
