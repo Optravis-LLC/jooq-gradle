@@ -1,5 +1,59 @@
 # Changelog
 
+## [3.0.0](https://github.com/Optravis-LLC/jooq-gradle/compare/v2.2.0...v3.0.0) (2025-07-31)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** Upgrade to Java 21 ([#121](https://github.com/Optravis-LLC/jooq-gradle/issues/121))
+
+### Bug Fixes
+
+* **deps:** update dependency org.postgresql:postgresql to v42.7.5 ([#102](https://github.com/Optravis-LLC/jooq-gradle/issues/102)) ([6e3c4c4](https://github.com/Optravis-LLC/jooq-gradle/commit/6e3c4c4e548c8d82c0d28ba0d1a81ab523139768))
+* **deps:** update dependency org.postgresql:postgresql to v42.7.6 ([#162](https://github.com/Optravis-LLC/jooq-gradle/issues/162)) ([99e912d](https://github.com/Optravis-LLC/jooq-gradle/commit/99e912dc3391ba9afaf694cb5ef046932d3230df))
+* **deps:** update dependency org.postgresql:postgresql to v42.7.7 ([#168](https://github.com/Optravis-LLC/jooq-gradle/issues/168)) ([89ffc71](https://github.com/Optravis-LLC/jooq-gradle/commit/89ffc7151e1a3b27b7abafa8ff1b977c21090fb9))
+* **deps:** update flyway to v11.0.1 ([#93](https://github.com/Optravis-LLC/jooq-gradle/issues/93)) ([917aa77](https://github.com/Optravis-LLC/jooq-gradle/commit/917aa77849e41ff2e70b11656d2966b957c9b794))
+* **deps:** update flyway to v11.1.0 ([#97](https://github.com/Optravis-LLC/jooq-gradle/issues/97)) ([7635eb3](https://github.com/Optravis-LLC/jooq-gradle/commit/7635eb3047b51f23d5bf249c65b39903ba9da9db))
+* **deps:** update flyway to v11.1.1 ([#100](https://github.com/Optravis-LLC/jooq-gradle/issues/100)) ([16ddc37](https://github.com/Optravis-LLC/jooq-gradle/commit/16ddc37fcefa9b5523fc69e1b677c1d683cc8ffb))
+* **deps:** update flyway to v11.10.0 ([#175](https://github.com/Optravis-LLC/jooq-gradle/issues/175)) ([5a862f3](https://github.com/Optravis-LLC/jooq-gradle/commit/5a862f36fbebf295f7cfbb30b78e09d7e120dbf3))
+* **deps:** update flyway to v11.10.1 ([#179](https://github.com/Optravis-LLC/jooq-gradle/issues/179)) ([b337464](https://github.com/Optravis-LLC/jooq-gradle/commit/b3374649c3aea185bad0d3ba89233d4a86b81c91))
+* **deps:** update flyway to v11.10.2 ([#182](https://github.com/Optravis-LLC/jooq-gradle/issues/182)) ([6373073](https://github.com/Optravis-LLC/jooq-gradle/commit/6373073135f5c66556c04de4b8848a5ff1bcb08e))
+* **deps:** update flyway to v11.10.3 ([#185](https://github.com/Optravis-LLC/jooq-gradle/issues/185)) ([1757365](https://github.com/Optravis-LLC/jooq-gradle/commit/17573652cd8cdef111f99256636f99cc62ce0032))
+* **deps:** update flyway to v11.10.4 ([#188](https://github.com/Optravis-LLC/jooq-gradle/issues/188)) ([e8d5a6e](https://github.com/Optravis-LLC/jooq-gradle/commit/e8d5a6e97a5c090db23f56a6392b7320c8cdb3b5))
+* **deps:** update flyway to v11.2.0 ([#104](https://github.com/Optravis-LLC/jooq-gradle/issues/104)) ([b501cc5](https://github.com/Optravis-LLC/jooq-gradle/commit/b501cc54896c51204c682f330fc3ee187a0c541a))
+* **deps:** update flyway to v11.3.0 ([#109](https://github.com/Optravis-LLC/jooq-gradle/issues/109)) ([ba432e8](https://github.com/Optravis-LLC/jooq-gradle/commit/ba432e8b2e5ffb7998e4aa0ae32080eef743c0dd))
+* **deps:** update flyway to v11.3.1 ([#111](https://github.com/Optravis-LLC/jooq-gradle/issues/111)) ([c0e2c85](https://github.com/Optravis-LLC/jooq-gradle/commit/c0e2c854bbba209c96ecc064939f1d20bc8f2b10))
+* **deps:** update flyway to v11.3.2 ([#113](https://github.com/Optravis-LLC/jooq-gradle/issues/113)) ([f435618](https://github.com/Optravis-LLC/jooq-gradle/commit/f435618c874dc965fcc2c57a2250af1dcf59cf8c))
+* **deps:** update flyway to v11.3.3 ([#115](https://github.com/Optravis-LLC/jooq-gradle/issues/115)) ([3432b8b](https://github.com/Optravis-LLC/jooq-gradle/commit/3432b8bdb204c38dea0a2a6dc21aeeb21cf10295))
+* **deps:** update flyway to v11.3.4 ([#123](https://github.com/Optravis-LLC/jooq-gradle/issues/123)) ([9a4c198](https://github.com/Optravis-LLC/jooq-gradle/commit/9a4c198aa581ce625c32031bbb5ba56741c18731))
+* **deps:** update flyway to v11.4.0 ([#128](https://github.com/Optravis-LLC/jooq-gradle/issues/128)) ([a54dc0a](https://github.com/Optravis-LLC/jooq-gradle/commit/a54dc0ad373134a15b8e80dc56a9d2649c1c9b51))
+* **deps:** update flyway to v11.4.1 ([#131](https://github.com/Optravis-LLC/jooq-gradle/issues/131)) ([58758c6](https://github.com/Optravis-LLC/jooq-gradle/commit/58758c63e2379a8cccca8b615922d00d6fa4dfd6))
+* **deps:** update flyway to v11.5.0 ([#133](https://github.com/Optravis-LLC/jooq-gradle/issues/133)) ([eee8d62](https://github.com/Optravis-LLC/jooq-gradle/commit/eee8d62464c10187bf8c23ddc23ac84a6671d1ee))
+* **deps:** update flyway to v11.6.0 ([#142](https://github.com/Optravis-LLC/jooq-gradle/issues/142)) ([5075f56](https://github.com/Optravis-LLC/jooq-gradle/commit/5075f56385cd9c51a2ded30a56e0abd28f6dbde7))
+* **deps:** update flyway to v11.7.1 ([#146](https://github.com/Optravis-LLC/jooq-gradle/issues/146)) ([18d6dac](https://github.com/Optravis-LLC/jooq-gradle/commit/18d6daca5135ac595c9d7a1113eebf8617055762))
+* **deps:** update flyway to v11.8.0 ([#148](https://github.com/Optravis-LLC/jooq-gradle/issues/148)) ([3491e26](https://github.com/Optravis-LLC/jooq-gradle/commit/3491e26360e8356828c1f52a68bd3283b941fcce))
+* **deps:** update flyway to v11.8.2 ([#158](https://github.com/Optravis-LLC/jooq-gradle/issues/158)) ([1d2e302](https://github.com/Optravis-LLC/jooq-gradle/commit/1d2e302a19595788fb6e238f84ab41cdc9198bb3))
+* **deps:** update flyway to v11.9.0 ([#165](https://github.com/Optravis-LLC/jooq-gradle/issues/165)) ([a381e1b](https://github.com/Optravis-LLC/jooq-gradle/commit/a381e1bb608d665d04a40911bc8e926a754ed41b))
+* **deps:** update flyway to v11.9.1 ([#167](https://github.com/Optravis-LLC/jooq-gradle/issues/167)) ([9f1a73c](https://github.com/Optravis-LLC/jooq-gradle/commit/9f1a73c454e15e28d1700154185ad968443bfb13))
+* **deps:** update flyway to v11.9.2 ([#170](https://github.com/Optravis-LLC/jooq-gradle/issues/170)) ([55eb5c9](https://github.com/Optravis-LLC/jooq-gradle/commit/55eb5c91c73d7d37d4d22be73cecd8b5a1590724))
+* **deps:** update jooq to 3.20.1 ([4979e28](https://github.com/Optravis-LLC/jooq-gradle/commit/4979e2898c0ccbeaf8c753e5794bf0be413b8358))
+* **deps:** update jooq to 3.20.1 ([#120](https://github.com/Optravis-LLC/jooq-gradle/issues/120)) ([0c4d5ad](https://github.com/Optravis-LLC/jooq-gradle/commit/0c4d5adf90ba35ed7a4c365b8af301878d946964))
+* **deps:** update jooq to v3.19.16 ([#95](https://github.com/Optravis-LLC/jooq-gradle/issues/95)) ([943cf8a](https://github.com/Optravis-LLC/jooq-gradle/commit/943cf8a24aa62f319b8e4c9b310fbae181182928))
+* **deps:** update jooq to v3.19.17 ([#101](https://github.com/Optravis-LLC/jooq-gradle/issues/101)) ([d5f5c9a](https://github.com/Optravis-LLC/jooq-gradle/commit/d5f5c9af699ded25a1ba917cc38de17d31e8a27a))
+* **deps:** update jooq to v3.19.18 ([#103](https://github.com/Optravis-LLC/jooq-gradle/issues/103)) ([a4ff41e](https://github.com/Optravis-LLC/jooq-gradle/commit/a4ff41e97c4fd8004b62bfef5d6479d29176ca9e))
+* **deps:** update jooq to v3.20.2 ([#127](https://github.com/Optravis-LLC/jooq-gradle/issues/127)) ([65289b3](https://github.com/Optravis-LLC/jooq-gradle/commit/65289b391e98018fb22eeee78ce664ab7ce78106))
+* **deps:** update jooq to v3.20.3 ([#141](https://github.com/Optravis-LLC/jooq-gradle/issues/141)) ([319bc23](https://github.com/Optravis-LLC/jooq-gradle/commit/319bc23cd9aa6f947bf9653db842335c08ed3134))
+* **deps:** update jooq to v3.20.4 ([#154](https://github.com/Optravis-LLC/jooq-gradle/issues/154)) ([07343ee](https://github.com/Optravis-LLC/jooq-gradle/commit/07343ee8f553754ad8b4f36a28e3c38ddd813b62))
+* **deps:** update jooq to v3.20.5 ([#169](https://github.com/Optravis-LLC/jooq-gradle/issues/169)) ([c4333ed](https://github.com/Optravis-LLC/jooq-gradle/commit/c4333ed51015270e5b657e1c8e6edef3db484f52))
+* **deps:** update testcontainers-java monorepo to v1.20.5 ([#117](https://github.com/Optravis-LLC/jooq-gradle/issues/117)) ([e4e8987](https://github.com/Optravis-LLC/jooq-gradle/commit/e4e8987d447a3db7296dc698189a6bc67e234574))
+* **deps:** update testcontainers-java monorepo to v1.20.6 ([#125](https://github.com/Optravis-LLC/jooq-gradle/issues/125)) ([80c1a7a](https://github.com/Optravis-LLC/jooq-gradle/commit/80c1a7a9b241aafefe8e9393a346f045947043ce))
+* **deps:** update testcontainers-java monorepo to v1.21.0 ([#149](https://github.com/Optravis-LLC/jooq-gradle/issues/149)) ([cb1879f](https://github.com/Optravis-LLC/jooq-gradle/commit/cb1879ff1d5b312e6fccbf0e53bed997246fedbb))
+* **deps:** update testcontainers-java monorepo to v1.21.1 ([#163](https://github.com/Optravis-LLC/jooq-gradle/issues/163)) ([c5faf5a](https://github.com/Optravis-LLC/jooq-gradle/commit/c5faf5a8a3502f0cbefea0f5d0ea8758c836f320))
+* **deps:** update testcontainers-java monorepo to v1.21.2 ([#171](https://github.com/Optravis-LLC/jooq-gradle/issues/171)) ([5a44eb9](https://github.com/Optravis-LLC/jooq-gradle/commit/5a44eb9e894615f8fa7462bf68c07c7afd184cfc))
+* **deps:** update testcontainers-java monorepo to v1.21.3 ([#177](https://github.com/Optravis-LLC/jooq-gradle/issues/177)) ([8e18116](https://github.com/Optravis-LLC/jooq-gradle/commit/8e18116ed7411f3ec3bf0f28d0f11edaa96a08a5))
+* **deps:** Upgrade to Java 21 ([#121](https://github.com/Optravis-LLC/jooq-gradle/issues/121)) ([878f555](https://github.com/Optravis-LLC/jooq-gradle/commit/878f5557d5833d1ed8136fab7f7f17095c16e31e))
+* release 3.0.15 ([46b889e](https://github.com/Optravis-LLC/jooq-gradle/commit/46b889ebfcfae44cffc902d79c0bc087ab575c0c))
+
 ## [2.2.0](https://github.com/Optravis-LLC/jooq-gradle/compare/v3.0.15...v2.2.0) (2025-07-28)
 
 
