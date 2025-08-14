@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.17](https://github.com/Optravis-LLC/jooq-gradle/compare/v3.0.16...v3.0.17) (2025-08-14)
+
+
+### Bug Fixes
+
+* **deps:** update jooq to v3.20.6 ([#201](https://github.com/Optravis-LLC/jooq-gradle/issues/201)) ([38aef1c](https://github.com/Optravis-LLC/jooq-gradle/commit/38aef1c583f697d8231ae46714ecc09bfa34dc50))
+
 ## [3.0.16](https://github.com/Optravis-LLC/jooq-gradle/compare/v3.0.15...v3.0.16) (2025-08-12)
 
 
