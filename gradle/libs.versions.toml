@@ -5,7 +5,7 @@ kotest = "5.9.1"
 flyway = "11.13.1"
 jooq = "3.20.7"
 testcontainers = "1.21.3"
-postgres = "42.7.7"
+postgres = "42.7.8"
 gradle-plugin-publish = "2.0.0"
 
 [plugins]
