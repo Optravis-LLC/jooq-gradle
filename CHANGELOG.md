@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.21](https://github.com/Optravis-LLC/jooq-gradle/compare/v3.0.20...v3.0.21) (2025-09-19)
+
+
+### Bug Fixes
+
+* **deps:** update dependency org.postgresql:postgresql to v42.7.8 ([#218](https://github.com/Optravis-LLC/jooq-gradle/issues/218)) ([9f6359a](https://github.com/Optravis-LLC/jooq-gradle/commit/9f6359acaefb3f5c3d874500d47cdba8f7ab25c6))
+
 ## [3.0.20](https://github.com/Optravis-LLC/jooq-gradle/compare/v3.0.19...v3.0.20) (2025-09-18)
 
 
