@@ -29,7 +29,7 @@ flyway-postgres = { module = "org.flywaydb:flyway-database-postgresql", version.
 
 # Test Containers
 testcontainers-core = { module = "org.testcontainers:testcontainers", version.ref = "testcontainers" }
-testcontainers-postgresql = { module = "org.testcontainers:postgresql", version.ref = "testcontainers" }
+testcontainers-postgresql = { module = "org.testcontainers:testcontainers-postgresql", version.ref = "testcontainers" }
 
 # DB access
 postgresql = { module = "org.postgresql:postgresql", version.ref = "postgres" }
