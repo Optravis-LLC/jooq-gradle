@@ -4,7 +4,7 @@ detekt = "1.23.8"
 kotest = "5.9.1"
 flyway = "11.14.1"
 jooq = "3.20.8"
-testcontainers = "1.21.3"
+testcontainers = "2.0.1"
 postgres = "42.7.8"
 gradle-plugin-publish = "2.0.0"
 
@@ -29,7 +29,7 @@ flyway-postgres = { module = "org.flywaydb:flyway-database-postgresql", version.
 
 # Test Containers
 testcontainers-core = { module = "org.testcontainers:testcontainers", version.ref = "testcontainers" }
-testcontainers-postgresql = { module = "org.testcontainers:postgresql", version.ref = "testcontainers" }
+testcontainers-postgresql = { module = "org.testcontainers:testcontainers-postgresql", version.ref = "testcontainers" }
 
 # DB access
 postgresql = { module = "org.postgresql:postgresql", version.ref = "postgres" }
