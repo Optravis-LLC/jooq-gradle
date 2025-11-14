@@ -4,7 +4,7 @@ detekt = "1.23.8"
 kotest = "5.9.1"
 flyway = "11.17.0"
 jooq = "3.20.9"
-testcontainers = "2.0.1"
+testcontainers = "2.0.2"
 postgres = "42.7.8"
 gradle-plugin-publish = "2.0.0"
 
