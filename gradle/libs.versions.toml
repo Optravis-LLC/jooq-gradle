@@ -1,5 +1,5 @@
 [versions]
-kotlin = "2.3.0"
+kotlin = "2.3.10"
 detekt = "1.23.8"
 kotest = "5.9.1"
 flyway = "12.0.0"
