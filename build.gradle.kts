@@ -17,16 +17,7 @@ repositories {
 dependencies {
     implementation(gradleKotlinDsl())
     implementation(libs.jooq.codegen)
-    implementation(libs.flyway.core) {
-        constraints {
-            implementation("tools.jackson.core:jackson-core") {
-                version {
-                    strictly("3.1.0")
-                }
-                because("Flyway depends on an older version of jackson-core that has a known vulnerability. This forces the use of a newer, non-vulnerable version.")
-            }
-        }
-    }
+    implementation(libs.flyway.core)
     implementation(libs.testcontainers.core)
     implementation(libs.postgresql)
 
