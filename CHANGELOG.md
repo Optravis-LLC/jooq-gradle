@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.36](https://github.com/Optravis-LLC/jooq-gradle/compare/v3.0.35...v3.0.36) (2026-03-10)
+
+
+### Bug Fixes
+
+* **deps:** update flyway to v12.0.2 ([#280](https://github.com/Optravis-LLC/jooq-gradle/issues/280)) ([75cd9e5](https://github.com/Optravis-LLC/jooq-gradle/commit/75cd9e5322ea31c8eaba9f9b3ff4011b90e17919))
+* **deps:** update flyway to v12.0.3 ([#284](https://github.com/Optravis-LLC/jooq-gradle/issues/284)) ([7000d00](https://github.com/Optravis-LLC/jooq-gradle/commit/7000d002a58bdf36143309633a2119b37951fc82))
+* **deps:** update flyway to v12.1.0 ([#289](https://github.com/Optravis-LLC/jooq-gradle/issues/289)) ([3c7834f](https://github.com/Optravis-LLC/jooq-gradle/commit/3c7834f45f82d0417feb1eeccc937bae384182a8))
+* Revert to jackson version constraints ([#287](https://github.com/Optravis-LLC/jooq-gradle/issues/287))" ([8c951b7](https://github.com/Optravis-LLC/jooq-gradle/commit/8c951b792659b267a73d8f3d53c2c8a0b8ea6b11))
+* Upgrading to jackson version to resolve vulnerability ([#287](https://github.com/Optravis-LLC/jooq-gradle/issues/287)) ([fa7c5a9](https://github.com/Optravis-LLC/jooq-gradle/commit/fa7c5a900c039bed084ec2a26ed3921a43168823))
+
 ## [3.0.35](https://github.com/Optravis-LLC/jooq-gradle/compare/v3.0.34...v3.0.35) (2026-02-13)
 
 
