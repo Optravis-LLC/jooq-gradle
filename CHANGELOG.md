@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.0.38](https://github.com/Optravis-LLC/jooq-gradle/compare/v3.0.37...v3.0.38) (2026-03-27)
+
+
+### Bug Fixes
+
+* **deps:** update jooq to v3.21.0 ([#300](https://github.com/Optravis-LLC/jooq-gradle/issues/300)) ([14cc5a5](https://github.com/Optravis-LLC/jooq-gradle/commit/14cc5a588caf88cf84bf0fe3f733b0edccbf3c93))
+* **deps:** update testcontainers-java monorepo to v2.0.4 ([#295](https://github.com/Optravis-LLC/jooq-gradle/issues/295)) ([48fd6fb](https://github.com/Optravis-LLC/jooq-gradle/commit/48fd6fb23542bf7efaf16f3ec58c7ce580d89511))
+
 ## [3.0.37](https://github.com/Optravis-LLC/jooq-gradle/compare/v3.0.36...v3.0.37) (2026-03-18)
 
 
