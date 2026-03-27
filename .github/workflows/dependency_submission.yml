@@ -16,4 +16,7 @@ jobs:
         with:
           distribution: 'corretto'
           java-version: 21
+          cache: gradle
       - uses: gradle/actions/dependency-submission@39e147cb9de83bb9910b8ef8bd7fff0ee20fcd6f # v6
+        with:
+          cache-disabled: true
