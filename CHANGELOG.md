@@ -1,5 +1,21 @@
 # Changelog
 
+## [3.0.38](https://github.com/Optravis-LLC/jooq-gradle/compare/v3.0.37...v3.0.38) (2026-05-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency org.postgresql:postgresql to v42.7.11 ([#312](https://github.com/Optravis-LLC/jooq-gradle/issues/312)) ([f700cbf](https://github.com/Optravis-LLC/jooq-gradle/commit/f700cbfed6f2f2b5fb1dcf8cde0fbf154a0ecde0))
+* **deps:** update flyway to v12.2.0 ([#303](https://github.com/Optravis-LLC/jooq-gradle/issues/303)) ([95d9ecd](https://github.com/Optravis-LLC/jooq-gradle/commit/95d9ecdf643e98744227b92ffa08a0ed3f81338b))
+* **deps:** update flyway to v12.4.0 ([#307](https://github.com/Optravis-LLC/jooq-gradle/issues/307)) ([bb0af12](https://github.com/Optravis-LLC/jooq-gradle/commit/bb0af1255604df986b14b4d3d27f474fb52b4d47))
+* **deps:** update flyway to v12.5.0 ([#311](https://github.com/Optravis-LLC/jooq-gradle/issues/311)) ([1863b81](https://github.com/Optravis-LLC/jooq-gradle/commit/1863b81243628d8aaca90396c089c5e1dfbb2773))
+* **deps:** update jooq to v3.21.0 ([#300](https://github.com/Optravis-LLC/jooq-gradle/issues/300)) ([14cc5a5](https://github.com/Optravis-LLC/jooq-gradle/commit/14cc5a588caf88cf84bf0fe3f733b0edccbf3c93))
+* **deps:** update jooq to v3.21.1 ([#302](https://github.com/Optravis-LLC/jooq-gradle/issues/302)) ([d4dbeec](https://github.com/Optravis-LLC/jooq-gradle/commit/d4dbeecf19e4bb7c224bdb9b05e32911d4b49c7d))
+* **deps:** update jooq to v3.21.2 ([#306](https://github.com/Optravis-LLC/jooq-gradle/issues/306)) ([bd18cbb](https://github.com/Optravis-LLC/jooq-gradle/commit/bd18cbb05567efe9981f74751980c4e3c2a7e756))
+* **deps:** update jooq to v3.21.3 ([#314](https://github.com/Optravis-LLC/jooq-gradle/issues/314))f ([b0c39a0](https://github.com/Optravis-LLC/jooq-gradle/commit/b0c39a0a213d22cd464fc863f1c869a0c69ff522))
+* **deps:** update testcontainers-java monorepo to v2.0.4 ([#295](https://github.com/Optravis-LLC/jooq-gradle/issues/295)) ([48fd6fb](https://github.com/Optravis-LLC/jooq-gradle/commit/48fd6fb23542bf7efaf16f3ec58c7ce580d89511))
+* **deps:** update testcontainers-java monorepo to v2.0.5 ([#308](https://github.com/Optravis-LLC/jooq-gradle/issues/308)) ([399f12a](https://github.com/Optravis-LLC/jooq-gradle/commit/399f12a262f285e29074a182ace5f09d7848d875))
+
 ## [3.0.37](https://github.com/Optravis-LLC/jooq-gradle/compare/v3.0.36...v3.0.37) (2026-03-18)
 
 
