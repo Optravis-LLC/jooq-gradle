@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.1.0](https://github.com/Optravis-LLC/jooq-gradle/compare/v3.0.38...v3.1.0) (2026-05-27)
+
+
+### Features
+
+* Add options to set the generator config rgd implicit join paths ([#322](https://github.com/Optravis-LLC/jooq-gradle/issues/322)) ([6b58995](https://github.com/Optravis-LLC/jooq-gradle/commit/6b589951e058ca2a1bb32b1b8dffc20c037b483e))
+
+
+### Bug Fixes
+
+* **deps:** update flyway to v12.6.2 ([#321](https://github.com/Optravis-LLC/jooq-gradle/issues/321)) ([005c2bb](https://github.com/Optravis-LLC/jooq-gradle/commit/005c2bb8920a6388317781016bdc84d7f062a71a))
+* **deps:** update jooq to v3.21.4 ([#319](https://github.com/Optravis-LLC/jooq-gradle/issues/319)) ([1172b5d](https://github.com/Optravis-LLC/jooq-gradle/commit/1172b5d73492fe8b479e81ab5cd1a6310be7b76f))
+
 ## [3.0.38](https://github.com/Optravis-LLC/jooq-gradle/compare/v3.0.37...v3.0.38) (2026-05-06)
 
 
