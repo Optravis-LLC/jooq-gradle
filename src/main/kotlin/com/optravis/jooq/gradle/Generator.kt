@@ -78,6 +78,9 @@ private fun JooqGeneratorConfig.toJooqGenerate(): Generate {
         .withPojos(pojos)
         .withJavaTimeTypes(javaTimeTypes)
         .withDeprecationOnUnknownTypes(deprecateUnknownTypes)
+        .withImplicitJoinPathsToOne(isImplicitJoinPathsToOne)
+        .withImplicitJoinPathsToMany(isImplicitJoinPathsToMany)
+        .withImplicitJoinPathsManyToMany(isImplicitJoinPathsManyToMany)
     return when (generatorType) {
         GeneratorType.Kotlin -> common
             .withPojosAsKotlinDataClasses(true)

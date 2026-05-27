@@ -35,7 +35,10 @@ public data class JooqGeneratorConfig(
     internal val kotlinPojos: Boolean = true,
     internal val pojos: Boolean = kotlinPojos,
     internal val daos: Boolean = true,
-    internal val visibilityModifier: VisibilityModifier = VisibilityModifier.DEFAULT
+    internal val visibilityModifier: VisibilityModifier = VisibilityModifier.DEFAULT,
+    internal val isImplicitJoinPathsToOne: Boolean = true,
+    internal val isImplicitJoinPathsToMany: Boolean = true,
+    internal val isImplicitJoinPathsManyToMany: Boolean = true,
 ) : Serializable
 
 /** Generator type currently supported by this plugin. */
