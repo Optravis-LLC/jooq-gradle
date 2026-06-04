@@ -1,0 +1,9 @@
+[tools]
+java = "corretto-21.0.11.10.1"
+just = "1.51.0"
+
+[tasks.just]
+run = "just"
+
+[tasks.verify]
+run = "just verify"
