@@ -26,7 +26,6 @@ dependencies {
 
     testImplementation(rootProject.libs.kotest.runner)
     testImplementation(rootProject.libs.kotest.assertions)
-    testImplementation(rootProject.libs.kotest.datatest)
 }
 
 gradlePlugin {
