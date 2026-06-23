@@ -1,6 +1,6 @@
 [tools]
 java = "corretto-21.0.11.10.1"
-just = "1.53.0"
+just = "1.54.0"
 
 [tasks.just]
 run = "just"
