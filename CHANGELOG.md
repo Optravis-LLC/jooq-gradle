@@ -1,5 +1,15 @@
 # Changelog
 
+## [3.1.4](https://github.com/Optravis-LLC/jooq-gradle/compare/v3.1.3...v3.1.4) (2026-07-24)
+
+
+### Bug Fixes
+
+* **deps:** update dependency org.postgresql:postgresql to v42.7.12 ([#345](https://github.com/Optravis-LLC/jooq-gradle/issues/345)) ([91b735e](https://github.com/Optravis-LLC/jooq-gradle/commit/91b735ef58d477c991992c22237eacee0ea68607))
+* **deps:** update dependency org.postgresql:postgresql to v42.7.13 ([#350](https://github.com/Optravis-LLC/jooq-gradle/issues/350)) ([4da9671](https://github.com/Optravis-LLC/jooq-gradle/commit/4da9671b08d7680f7a12dadac6dab5d8f11bc2a5))
+* **deps:** update flyway to v13 ([#355](https://github.com/Optravis-LLC/jooq-gradle/issues/355)) ([73be6ab](https://github.com/Optravis-LLC/jooq-gradle/commit/73be6abaad5443ba4de9b1174b5c57cbf30b4de2))
+* **deps:** update kotest to v6.2.3 ([#352](https://github.com/Optravis-LLC/jooq-gradle/issues/352)) ([fa8afb1](https://github.com/Optravis-LLC/jooq-gradle/commit/fa8afb11ffa8fbedb7111a0a9902c24478a260ad))
+
 ## [3.1.3](https://github.com/Optravis-LLC/jooq-gradle/compare/v3.1.2...v3.1.3) (2026-06-22)
 
 
