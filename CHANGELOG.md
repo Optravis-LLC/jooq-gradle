@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.5](https://github.com/Optravis-LLC/jooq-gradle/compare/v3.1.4...v3.1.5) (2026-09-07)
+
+
+### Bug Fixes
+
+* **deps:** update Kotlin to version `2.4.20` ([de14c16](https://github.com/Optravis-LLC/jooq-gradle/commit/de14c16fda234b0336a450bb2985093e091aa62b))
+
 ## [3.1.4](https://github.com/Optravis-LLC/jooq-gradle/compare/v3.1.3...v3.1.4) (2026-07-27)
 
 
