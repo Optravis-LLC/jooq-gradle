@@ -6,7 +6,7 @@ flyway = "13.0.0"
 jooq = "3.21.6"
 testcontainers = "2.0.5"
 postgres = "42.7.13"
-gradle-plugin-publish = "2.1.1"
+gradle-plugin-publish = "2.2.1"
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
